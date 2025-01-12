@@ -1,0 +1,183 @@
+.footer-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    /* Three rows: top, navigation, bottom */
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Ensure wrapping on smaller screens */
+    gap: 20px;
+}
+
+/* Social Section */
+.footer-social {
+    text-align: center;
+    flex: 1;
+    /* Take up equal space in the row */
+}
+
+.footer-social h4 {
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-buttons a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-buttons a:hover {
+    color: #ffd700;
+}
+
+/* Newsletter Section */
+.footer-newsletter {
+    text-align: center;
+    flex: 2;
+    /* Allow newsletter section to take more space */
+}
+
+.footer-newsletter h4 {
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.footer-newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-newsletter input {
+    flex-grow: 1;
+    /* Input expands to available space */
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    max-width: 300px;
+}
+
+.footer-newsletter button {
+    background-color: #0fca6e;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+    background-color: #00ff8c;
+}
+
+/* Navigation Section */
+.footer-navigation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Four equal columns for navigation */
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-navigation h5 {
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-navigation ul li a:hover {
+    color: #ffd700;
+}
+
+/* Bottom Row: Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-bottom ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom ul li a:hover {
+    color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        /* Stack Follow us & Newsletter vertically */
+        text-align: center;
+    }
+
+    .footer-navigation {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce navigation to 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-navigation {
+        grid-template-columns: 1fr;
+        /* Single column for navigation */
+    }
+
+    .footer-newsletter form {
+        flex-direction: column;
+        /* Stack input and button */
+    }
+
+    .footer-newsletter input {
+        max-width: 100%;
+        /* Full width input */
+    }
+}

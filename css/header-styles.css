@@ -1,0 +1,79 @@
+/* Navbar */
+nav {
+    min-height: 80px;
+}
+
+nav .nav-link,
+.btn-all-tours {
+    vertical-align: middle;
+    color: whitesmoke;
+    transition: color 0.3s ease-in-out;
+}
+
+nav .nav-link:hover {
+    color: #F6C794;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-transparent {
+    background-color: transparent !important;
+}
+
+.navbar-solid {
+    background-color: #6A80B9 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #FFF6B3;
+}
+
+.navbar-brand:hover {
+    color: #F6C794;
+}
+
+.btn-all-tours {
+    background-color: #6A80B9;
+    color: #FFF6B3;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 8px 15px rgba(106, 128, 185, 0.5);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    clip-path: polygon(25% 0, 75% 5%, 100% 1%, 100% 100%, 0 100%, 0 4%);
+}
+
+.btn-all-tours:hover {
+    background-color: #F6C794;
+    box-shadow: 0px 15px 30px rgba(106, 128, 185, 0.75);
+    transform: translateY(-5px);
+}
+
+.btn-all-tours::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: rgba(106, 128, 185, 0.3);
+    /* Muted blue */
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1.1);
+    opacity: 0;
+    clip-path: polygon(25% 0, 75% 5%, 100% 1%, 100% 100%, 0 100%, 0 4%);
+}
+
+.btn-all-tours:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
