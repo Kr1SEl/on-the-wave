@@ -1,0 +1,65 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f9ff;
+    /* Light blue for a sea theme */
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(to bottom right, #87ceeb, #ffa07a);
+    /* Blue to sunset orange */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #ffa07a;
+    /* Sunset orange */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ff7f50;
+    /* Coral for hover effect */
+}
+
+/* Footer */
+footer {
+    background-color: #87ceeb;
+    /* Light blue for footer */
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #f0f8ff;
+    /* Alice blue for navigation bar */
+}
+
+nav .nav-link {
+    color: #0077b6;
+    /* Deep ocean blue */
+}
+
+nav .nav-link:hover {
+    color: #ffa07a;
+    /* Sunset orange */
+}
