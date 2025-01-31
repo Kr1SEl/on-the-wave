@@ -1,30 +1,58 @@
+<!-- Desktop Navbar -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light navbar-transparent fixed-top">
     <div class="container nav-container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/on-the-wave/">
             <img src="/on-the-wave/resources/media/logo.png" alt="" role="presentation" width="80" height="80">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler d-lg-none" type="button" id="menu-toggler" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tour Types</a>
+                    <a class="nav-link" href="/on-the-wave/components/pages/gallery.html" data-translate="nav.gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Community</a>
+                    <a class="nav-link" href="#" data-translate="nav.blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Information</a>
+                    <a class="nav-link" href="#" data-translate="nav.contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-all-tours" href="#">All Tours</a>
+                    <a class="btn btn-all-tours" href="#" data-translate="nav.tours">Tours</a>
                 </li>
             </ul>
+            <div class="dropdown">
+                <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn" data-bs-toggle="dropdown">
+                    🌐 Language
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <!-- JS -->
+                </div>
+            </div>
         </div>
     </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div id="overlay-menu" class="overlay-menu">
+    <button id="close-overlay" class="close-overlay">&times;</button>
+    <ul class="menu-links">
+        <li><a href="/on-the-wave/components/pages/gallery.html" data-translate="nav.gallery">Gallery</a></li>
+        <li><a href="#" data-translate="nav.blog">Blog</a></li>
+        <li><a href="#" data-translate="nav.contact">Contact</a></li>
+        <li><a href="#" data-translate="nav.tours">Tours</a></li>
+    </ul>
+    <div class="social-buttons-header">
+        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+    <div class="dropdown">
+        <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn-mobile" data-bs-toggle="dropdown" tabindex="3">
+            🌐 Language
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu-mobile">
+            <!--JS -->
+        </div>
+    </div>
+</div>

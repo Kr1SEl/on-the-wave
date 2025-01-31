@@ -1,61 +1,60 @@
 <footer class="site-footer">
     <div class="footer-container">
 
-        <div class="footer-top">
-            <div class="footer-social">
-                <h4>Follow us!</h4>
-                <div class="social-buttons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                </div>
-            </div>
-        
-            <div class="footer-newsletter">
-                <h4>Subscribe to Our Newsletter</h4>
-                <form>
-                    <input type="email" placeholder="Your email address" aria-label="Enter your email address" required />
-                    <button type="submit" aria-label="Subscribe to newsletter">
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </form>
-            </div>
+        <div class="footer-newsletter">
+            <h5 data-translate="newsletter-subscribe"></h5>
+            <form id="newsletterForm">
+                <input id="emailNewsletter" type="email" aria-label="Enter your email address" required />
+                <button type="submit" data-translate="subscribe"></button>
+            </form>
         </div>
-
 
         <div class="footer-navigation">
-            <div class="nav-column">
-                <h5>Tours</h5>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Meetups</a></li>
-                </ul>
-            </div>
-            <div class="nav-column">
-                <h5>Community</h5>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Meetups</a></li>
-                </ul>
-            </div>
-            <div class="nav-column">
-                <h5>Info</h5>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Meetups</a></li>
-                </ul>
-            </div>
-            <div class="nav-column">
-                <h5>Contact</h5>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Meetups</a></li>
-                </ul>
+            <h5 data-translate="navigate"></h5>
+            <ul>
+                <li><a href="#" data-translate="nav.gallery"></a></li>
+                <li><a href="#" data-translate="nav.blog"></a></li>
+                <li><a href="#" data-translate="nav.contact"></a></li>
+                <li><a href="#" data-translate="nav.tours"></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social-contact">
+            <h5 data-translate="follow-us"></h5>
+            <div class="social-links">
+                <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 On The Wave. All Rights Reserved</p>
+        <div class="footer-social-contact">
+            <h5 data-translate="need-help"></h5>
+            <p>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel" aria-label="Call us">
+                    <span data-translate="phone-one"></span>
+                </a>
+            </p>
+            <p>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel" aria-label="Call us">
+                    <span data-translate="phone-two"></span>
+                </a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto" aria-label="Email us">
+                    <span data-translate="email"></span>
+                </a>
+            </p>
         </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+        <p>&copy; <span data-translate="year"></span> <span data-translate="rights-reserved"></span></p>
     </div>
 </footer>

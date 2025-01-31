@@ -1,7 +1,82 @@
 body {
     font-family: "Vollkorn SC", serif;
     background-color: rgb(249, 246, 243);
-    color: #155E95;
+    color: var(--primary-color);
+}
+
+hr{
+    width: 100%;
+}
+
+#alert-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1050;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#alert-container .alert {
+    pointer-events: auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+.wave-header{
+    margin-bottom: 3px !important;
+}
+
+.waveWidget {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 5' height='0.4375rem' fill='%2320B9FB'%3E%3Cpath d='M3.07 1.022C4.9 2.319 6.371 2.954 7.794 3c1.416.046 2.872-.49 4.673-1.74l.57 1.82C11.147 4.393 9.478 5.055 7.762 5c-1.71-.055-3.377-.82-5.27-2.162zm9.397.237C13.557.5 14.85 0 16.223 0v2c-1.126 0-2.224.412-3.186 1.08zM0 0c1.119 0 2.182.393 3.07 1.022l-.578 1.816C1.747 2.31.882 2 0 2z'/%3E%3C/svg%3E") center repeat-x;
+    width: 6rem;
+    height: 12px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 15px !important;
+}
+
+.carousel-item {
+    padding: 0 10px;
+}
+
+.card {
+    width: 300px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    z-index: 2;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(20%) sepia(63%) saturate(2323%) hue-rotate(196deg) brightness(90%) contrast(94%);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    filter: invert(34%) sepia(56%) saturate(1905%) hue-rotate(196deg) brightness(95%) contrast(89%);
+}
+
+.gallery .text-center {
+    display: block;
+    text-align: center;
 }
 
 .video-section {
@@ -24,22 +99,22 @@ body {
     bottom: -2px;
     width: 100%;
     height: 15%;
-    background-color: #6A80B9;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 4rem 0;
-    clip-path: polygon(25% 0, 75% 10%, 101% -1%, 120% 120%, -1% 120%, -1% 10%);
+    clip-path: polygon(25% 0, 75% 15%, 101% 0, 120% 120%, 0 120%, 0 15%);
 }
 
 .hero {
     background-size: cover;
-    background-image: linear-gradient(to bottom, #6A80B9, #DDA853);
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
     height: auto;
-    color: white;
+    color: var(--light-text-color);
     text-align: center;
     padding: 2rem 1rem;
     align-items: center;
@@ -58,7 +133,7 @@ body {
 }
 
 .gallery {
-    background-color: #DDA853;
+    background-color: var(--secondary-color);
     clip-path: polygon(-1% -1%, 120% 0, 110% 95%, 75% 100%, 25% 95%, -1% 101%);
     padding: 2rem 1rem;
     display: flex;
@@ -66,23 +141,161 @@ body {
     align-items: center;
 }
 
+.gallery-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.gallery-grid .gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-grid .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-grid .gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+.gallery-grid .gallery-item .overlay h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gallery-grid .gallery-item .overlay p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+.gallery-grid .item-odd {
+    grid-column: span 4;
+}
+
+.gallery-grid .item-even {
+    grid-column: span 3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid .gallery-item {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid .gallery-item {
+        grid-column: span 12;
+    }
+}
+
 .main{
     height: 80vh;
 }
 
+.gap{
+    padding-top: 5%;
+}
+
 .btn-primary {
-    background-color: #DDA853;
+    background-color: var(--secondary-color);
     border: none;
     font-size: 1rem;
     padding: 0.5rem 1rem;
 }
 
 .btn-primary:hover {
-    background-color: #DDA853;
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--text-accent);
+}
+
+.cta-section .cta-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+}
+
+.cropped-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    object-fit: cover;
+    object-position: center bottom;
+    top: 50%;
+    transform: translateY(-50%) scale(1.5);
+}
+
+.cta-section h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--light-text-color);
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section .btn-primary {
+    background-color: var(--success-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-section .btn-primary:hover {
+    background-color: var(--success-accent);
+    transform: translateY(-3px);
+}
+
 @media (max-width: 768px) {
+
+    .gallery {
+        clip-path: polygon(-2% -2%, 100% -2%, 100% 99%, 75% 100%, 25% 99%, -2% 100%);
+    }
+
+    .video-overlay {
+        clip-path: polygon(25% 0, 75% 4%, 100% 0, 100% 100%, 0 100%, 0 4%);
+    }
 
     .video-overlay,
     .hero,
@@ -94,6 +307,10 @@ body {
     h2,
     h3 {
         font-size: 1.5rem;
+    }
+
+    .gap {
+        padding-top: 0%;
     }
 
     .video-section {
@@ -112,7 +329,8 @@ body {
     }
 
     .video-overlay {
-        height: 30%;
+        height: 25%;
         padding: 1rem;
     }
+
 }
