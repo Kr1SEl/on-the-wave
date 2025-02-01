@@ -25,7 +25,7 @@ function createCarousel(chunkSize) {
             const tour = tours[key];
 
             const card = `
-                <div class="card mx-2">
+                <div class="card destination-card mx-2 my-3">
                     <img src="${tour["main-photo"]}" class="card-img-top" alt="${tour.destination}">
                     <div class="card-body">
                         <h5 class="card-title">${tour.destination}</h5>
@@ -89,9 +89,9 @@ function injectButtonsLogic(){
 function resizeCarousel(){
     const windowSize = window.innerWidth;
     let chunkSize;
-    if (windowSize < 768){
+    if (windowSize < 992){
         chunkSize = 1;
-    }else if(windowSize < 1200){
+    }else if(windowSize < 1400){
         chunkSize = 2;
     }else{
         chunkSize = 3;

@@ -27,7 +27,7 @@
     </div>
 </section>
 
-<section class="hero">
+<section class="facts">
     <div class="container text-center">
         <div class="row gap">
             <div class="col-md-4">
@@ -59,14 +59,29 @@
     </div>
 </section>
 
-<section class="main py-5">
+<section class="destinations py-5">
     <div class="container">
         <h2 class="text-center mb-4 wave-header" data-translate="destinations"></h2>
         <div class="waveWidget"></div>
+
         <div id="toursCarousel" class="carousel slide">
             <div class="carousel-inner" id="carouselContent">
-                <!-- JS -->
+                <!-- JS Injected Cards -->
             </div>
+
+            <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#toursCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#toursCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="carousel-controls-container d-md-none text-center mt-3">
             <button class="carousel-control-prev" type="button" data-bs-target="#toursCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -83,6 +98,52 @@
     </div>
 </section>
 
+<section class="blog-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4 wave-header" data-translate="blog-title"></h2>
+        <div class="waveWidget"></div>
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card blog-card flex-md-row">
+                    <img src="/on-the-wave/resources/media/yacht/yacht_1.webp" class="card-img-left" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="blog-one-title"></h5>
+                        <p class="card-text" data-translate="blog-one-summary"></p>
+                        <a href="blog-post-1.html" class="btn btn-primary" data-translate="read-more"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="card blog-card flex-md-row">
+                    <img src="/on-the-wave/resources/media/yacht/yacht_2.webp" class="card-img-left" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="blog-two-title"></h5>
+                        <p class="card-text" data-translate="blog-two-summary"></p>
+                        <a href="blog-post-2.html" class="btn btn-primary" data-translate="read-more"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="card blog-card flex-md-row">
+                    <img src="/on-the-wave/resources/media/yacht/yacht_3.webp" class="card-img-left" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="blog-three-title"></h5>
+                        <p class="card-text" data-translate="blog-three-summary"></p>
+                        <a href="blog-post-3.html" class="btn btn-primary" data-translate="read-more"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="tours.html" class="btn btn-outline-primary" data-translate="explore-our-blog"></a>
+        </div>
+    </div>
+</section>
+
 <section class="cta-section py-5">
     <div class="container d-flex flex-column flex-lg-row align-items-center">
         <div class="cta-image">
@@ -90,9 +151,9 @@
                 class="img-fluid rounded-circle cropped-img">
         </div>
         <div class="cta-content text-center text-lg-start ms-lg-4 mt-4 mt-lg-0">
-            <h2>Ready to jump into the trip together?</h2>
-            <p class="mb-4">Contact us to make your next adventure unforgettable!</p>
-            <button id="contactButton" class="btn btn-primary">Contact Us</button>
+            <h2 data-translate="contact-header"></h2>
+            <p class="mb-4" data-translate="contact-subtitle"></p>
+            <button id="contactButton" class="btn btn-primary" data-translate="contact-us"></button>
         </div>
     </div>
 </section>

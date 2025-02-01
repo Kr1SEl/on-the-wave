@@ -34,7 +34,19 @@ export const english = {
             "highlights": "Highlights",
             "destinations": "Destinations",
             "all-tours-btn": "View All Tours",
-            "find-more-gallery-btn": "Find More in Gallery!"
+            "find-more-gallery-btn": "Find More in Gallery!",
+            "blog-title": "Most Popular Blog Posts",
+            "blog-one-title": "Sailing the Mediterranean",
+            "blog-one-summary": "Explore the beauty of the Mediterranean with our expert sailing guides...",
+            "blog-two-title": "Best Yachting Destinations",
+            "blog-two-summary": "Discover the most stunning yachting spots for your next adventure...",
+            "blog-three-title": "Tips for First-Time Sailors",
+            "blog-three-summary": "Essential tips and tricks to make your first sailing trip smooth...",
+            "read-more": "Read More",
+            "explore-our-blog": "Explore Our Blog",
+            "contact-header": "Ready to jump into the trip together?",
+            "contact-subtitle": "Contact us to make your next adventure unforgettable!",
+            "contact-us": "Contact Us"
         },
         "highlights":{
             "highlight-1":{
