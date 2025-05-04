@@ -15,6 +15,10 @@ export async function loadPage(page) {
             url: "/on-the-wave/components/pages/blog.html",
             callback: () => console.log("Blog page loaded!"),
         },
+        "blog-post": {
+            url: "/on-the-wave/components/pages/blog-post.html",
+            callback: () => loadBlogPostPage(),
+        },
         "gallery": {
             url: "/on-the-wave/components/pages/gallery.html",
             callback: () => console.log("Gallery page loaded!"),
@@ -35,12 +39,11 @@ export async function loadPage(page) {
         const response = await fetch(mapping.url);
         if (response.ok) {
             document.getElementById("content").innerHTML = await response.text();
-
             if (mapping.callback) {
                 mapping.callback();
             }
-
             history.pushState({}, "", `${page}`);
+            window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
             console.error('Failed to load page:', response.statusText);
         }

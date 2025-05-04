@@ -36,7 +36,6 @@ export function applyTranslations(targetPage = "") {
     });
 }
 
-
 export function injectContact() {
     const prefLang = localStorage.getItem("prefLang") || "en-GB";
     let selectedTranslations = translationData[prefLang]["common"];

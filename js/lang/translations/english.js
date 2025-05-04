@@ -123,6 +123,8 @@ export const english = {
             }
         },
         "contact":{
+            "page-title": "Contact Us",
+            "page-subtitle": "We are always happy to help you with any questions you may have. Contact us and we will get back to you as soon as possible.",
             "write-to-us": "Write to Us",
             "write-to-us-subtitle": "If you have any questions, fill out the form below and we will get in touch with you shortly.",
             "send-message": "Send Message",

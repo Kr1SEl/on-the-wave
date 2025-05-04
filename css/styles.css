@@ -119,6 +119,30 @@ hr{
     clip-path: polygon(25% 0, 75% 15%, 101% 0, 120% 120%, 0 120%, 0 15%);
 }
 
+.header-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.header-image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
 .facts {
     background-size: cover;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
