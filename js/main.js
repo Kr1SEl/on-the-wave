@@ -2,7 +2,9 @@ import { initLanguage } from "./lang/language.js";
 import { applyTranslations } from "./lang/translations.js";
 import { injectContact } from "./lang/translations.js";
 import { loadPage } from "./controllers/redirectController.js";
+import { showAlert } from "./controllers/alertController.js";
 import { EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE } from "./config/conf.js";
+import { injectHeaderButtonsLogic, injectFooterButtonsLogic } from "./controllers/buttonsController.js";
 
 async function injectHeader(){
     const headerContainer = document.getElementById('header');
@@ -12,6 +14,7 @@ async function injectHeader(){
             headerContainer.innerHTML = await response.text();
             injectNavbar();
             injectMobileMenu();
+            injectHeaderButtonsLogic();
             initLanguage('dropdown-menu', 'lang-menu-btn');
             initLanguage('dropdown-menu-mobile', 'lang-menu-btn-mobile');
             applyTranslations();
@@ -68,6 +71,7 @@ async function injectFooter(){
             injectContact();
             applyTranslations();
             injectFooterEmailLogic();
+            injectFooterButtonsLogic();
         } else {
             console.error('Failed to load footer:', response.statusText);
         }
@@ -90,49 +94,24 @@ function injectFooterEmailLogic(){
                 emailInput.value = '';
             },
             function (error) {
-                showAlert('Failed to send email. Please try again later.', 'danger');
+                showAlert('Failed to subscribe. Please try again later.', 'danger');
                 console.error('EmailJS Error:', error);
             }
         );
     });
 }
 
-function showAlert(message, type) {
-    const icons = {
-        success: `
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                <use xlink:href="#check-circle-fill"></use>
-            </svg>
-        `,
-        danger: `
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                <use xlink:href="#exclamation-triangle-fill"></use>
-            </svg>
-        `
-    };
+window.addEventListener("DOMContentLoaded", () => {
+    const [page, query] = window.location.hash.replace(/^#/, "").split("?");
+    const params = new URLSearchParams(query);
+    const id = params.get("id");
 
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type} d-flex align-items-center alert-dismissible fade show`;
-    alert.role = 'alert';
-    alert.innerHTML = `
-        ${icons[type] || ''}
-        <div>${message}</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-
-    const alertContainer = document.getElementById('alert-container');
-    alertContainer.appendChild(alert);
-
-    setTimeout(() => {
-        alert.classList.remove('show');
-        alert.addEventListener('transitionend', () => alert.remove());
-    }, 5000);
-}
+    loadPage(page || "", id);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     injectHeader();
     injectFooter();
-    loadPage("");
 });
 
 

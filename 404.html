@@ -1,3 +1,19 @@
-<script>
-    window.location.href = "/";
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var path = window.location.pathname.replace(/^\/on-the-wave/, '');
+        var query = window.location.search;
+        var newUrl = '/on-the-wave/index.html' + query + '#' + path.replace(/^\/+/, '');
+
+        window.location.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>

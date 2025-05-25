@@ -1,5 +1,6 @@
 import { applyTranslations } from "../lang/translations.js";
 import { translationData } from "../lang/translations.js";
+import { injectHomepageButtonsLogic } from "../controllers/buttonsController.js";
 
 const prefLang = localStorage['prefLang'];
 let prevChunksize = 0;
@@ -75,17 +76,6 @@ function injectGalleryContent() {
     });
 }
 
-function injectButtonsLogic(){
-    const contactButton = document.getElementById("contactButton");
-
-    if (contactButton) {
-        contactButton.addEventListener("click", function (event) {
-            event.preventDefault();
-            loadPage("contact");
-        });
-    }
-}
-
 function resizeCarousel(){
     const windowSize = window.innerWidth;
     let chunkSize;
@@ -103,11 +93,17 @@ function resizeCarousel(){
     }
 }
 
-export function loadHomePage(){
-    prevChunksize = 0;
-    applyTranslations("home");
-    injectGalleryContent();
-    resizeCarousel();
-    injectButtonsLogic();
-    window.addEventListener("resize", resizeCarousel);
+export function loadHomePage() {
+    return new Promise((resolve) => {
+        prevChunksize = 0;
+        applyTranslations("home");
+        injectGalleryContent();
+        resizeCarousel();
+        injectHomepageButtonsLogic();
+
+        window.removeEventListener("resize", resizeCarousel);
+        window.addEventListener("resize", resizeCarousel);
+
+        resolve();
+    });
 }

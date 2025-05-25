@@ -148,9 +148,18 @@
 
     .footer-navigation ul {
         text-align: center;
+        padding: 0;
     }
 
     .footer-social-contact .social-links {
         justify-content: center;
     }
+
+    .footer-navigation li,
+    .footer-navigation .nav-link {
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
 }

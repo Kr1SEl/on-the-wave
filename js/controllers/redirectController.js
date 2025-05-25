@@ -1,27 +1,51 @@
 import { loadHomePage } from "../pages/home.js";
 import { loadContactPage } from "../pages/contact.js";
+import { loadBlogPage } from "../pages/blogPost.js"
 
-export async function loadPage(page) {
+let lastScrollTarget = null;
+
+export async function loadPage(page, id = null) {
+    console.log(page);
     const pageMappings = {
-        "contact": {
-            url: "/on-the-wave/components/pages/contact.html",
-            callback: () => loadContactPage(),
-        },
-        "tours": {
-            url: "/on-the-wave/components/pages/tours.html",
-            callback: () => console.log("Tours page loaded!"),
+        "gallery": {
+            url: "/on-the-wave/components/pages/home.html",
+            callback: () => {
+                loadHomePage().then(() => {
+                    scrollToSection("gallery-section");
+                });
+            },
         },
         "blog": {
-            url: "/on-the-wave/components/pages/blog.html",
-            callback: () => console.log("Blog page loaded!"),
+            url: "/on-the-wave/components/pages/home.html",
+            callback: () => {
+                loadHomePage().then(() => {
+                    scrollToSection("blog-section");
+                });
+            },
         },
         "blog-post": {
             url: "/on-the-wave/components/pages/blog-post.html",
-            callback: () => loadBlogPostPage(),
+            callback: () => {
+                loadBlogPage(id).then(() => {
+                    scrollToTop();
+                });
+            }
         },
-        "gallery": {
-            url: "/on-the-wave/components/pages/gallery.html",
-            callback: () => console.log("Gallery page loaded!"),
+        "contact": {
+            url: "/on-the-wave/components/pages/contact.html",
+            callback: () => { 
+                loadContactPage().then(() => {
+                    scrollToTop();
+                });
+            },
+        },
+        "tours": {
+            url: "/on-the-wave/components/pages/home.html",
+            callback: () => {
+                loadHomePage().then(() => {
+                    scrollToSection("tours-section");
+                });
+            },
         },
         "": {
             url: "/on-the-wave/components/pages/home.html",
@@ -42,8 +66,7 @@ export async function loadPage(page) {
             if (mapping.callback) {
                 mapping.callback();
             }
-            history.pushState({}, "", `${page}`);
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            history.pushState({}, "", `#${page}${id ? `?id=${id}` : ""}`);
         } else {
             console.error('Failed to load page:', response.statusText);
         }
@@ -52,10 +75,29 @@ export async function loadPage(page) {
     }
 }
 
+function scrollToSection(id, offset = 80) {
+    if (lastScrollTarget === id) return;
+    lastScrollTarget = id;
+
+    const el = document.getElementById(id);
+    if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+
+        setTimeout(() => (lastScrollTarget = null), 500);
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0 });
+}
 
 window.loadPage = loadPage;
 
 window.onpopstate = function () {
-    const pageName = window.location.pathname.split("/").pop().replace(".html", "");
-    loadPage(pageName);
+    const url = new URL(window.location.href);
+    const pageName = url.pathname.split("/").pop().replace(".html", "") || "";
+    const id = url.searchParams.get("id");
+
+    loadPage(pageName, id);
 };

@@ -26,7 +26,13 @@ hr{
     pointer-events: auto;
     max-width: 90%;
     text-align: center;
+    transition: opacity 0.5s ease;
+    opacity: 1;
 }
+
+#alert-container .alert.hide {
+    opacity: 0;
+  }
 
 .wave-header{
     margin-bottom: 3px !important;
@@ -62,6 +68,26 @@ hr{
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
 }
 
 .carousel-control-prev,
@@ -304,26 +330,6 @@ hr{
     transform: translateY(-3px);
 }
 
-.blog-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-}
-
-.blog-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-}
-
 .btn-primary {
     background-color: #155E95;
     border: none;
@@ -337,6 +343,10 @@ hr{
     max-width: 1200px;
 }
 
+.destinations .container {
+    max-width: 1400px;
+}
+
 @media (min-width: 1200px) {
     .carousel-control-prev {
         left: -60px;
@@ -347,6 +357,39 @@ hr{
     }
 }
 
+@media (max-width: 1400px) {
+    .carousel-control-prev {
+        left: -90px;
+    }
+
+    .carousel-control-next {
+        right: -90px;
+    }
+
+    .destination-card {
+        width: 45%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .destination-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .destination-card img {
+        width: 100%;
+        height: auto;
+        max-height: 390px;
+        object-fit: cover;
+    }
+
+    .blog-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 @media (min-width: 768px) {
     .blog-card {
@@ -362,19 +405,13 @@ hr{
         max-height: 250px;
     }
 
-    .destination-card .blog-card .card-body {
+    .blog-card .card-body {
         width: 60%;
         padding: 20px;
     }
 }
 
-@media (max-width: 576px) {
-    .gallery-grid .gallery-item {
-        grid-column: span 12;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .carousel-control-prev,
     .carousel-control-next {
@@ -442,4 +479,10 @@ hr{
         padding: 1rem;
     }
 
+}
+
+@media (max-width: 576px) {
+    .gallery-grid .gallery-item {
+        grid-column: span 12;
+    }
 }
