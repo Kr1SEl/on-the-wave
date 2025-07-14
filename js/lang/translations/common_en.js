@@ -2,27 +2,29 @@ import * as Org from '/on-the-wave/js/config/org.js';
 
 export const english = {
     "data": {
-        "common":{
+        "common": {
+            "company.title": "OnTheWave",
             "nav.gallery": "Gallery",
             "nav.blog": "Blog",
             "nav.contact": "Contact",
             "nav.tours": "Tours",
             "year": new Date().getFullYear(),
-            "rights-reserved": "On The Wave. All Rights Reserved",
-            "follow-us": "Follow us!",
-            "newsletter-subscribe": "Subscribe to Our Newsletter",
             "phone-one": Org.COMPANY_PHONE_UKR_PRIMARY,
             "phone-two": Org.COMPANY_PHONE_UKR_SECONDARY,
             "phone-one-href": Org.COMPANY_PHONE_UKR_PRIMARY_HREF,
             "phone-two-href": Org.COMPANY_PHONE_UKR_SECONDARY_HREF,
             "email": Org.COMPANY_EMAIL,
-            "subscribe": "Subscribe",
-            "navigate": "Navigate",
-            "follow-us": "Follow Us",
-            "need-help" : "Need Help?",
-            "email-placeholder": "Your email address",
+            "footer.rights-reserved": "On The Wave. All Rights Reserved",
+            "footer.social.title": "OnTheWave",
+            "footer.social.description": "Providing unforgettable sailing experiences since 2016.",
+            "footer.newsletter.title": "Newsletter",
+            "footer.newsletter.description": "Subscribe to get updates on new tours and special offers.",
+            "footer.newsletter.email-placeholder": "Your email address",
+            "footer.subscribe": "Subscribe",
+            "footer.quick-links": "Quick Links",
+            "footer.contact-us": "Contact Us",
         },
-        "home":{
+        "home": {
             "title": "Sailing Holidays for Active People",
             "subtitle": "Experience breathtaking adventures on the sea",
             "fact-one-title": "100+ Dates",
@@ -48,8 +50,8 @@ export const english = {
             "contact-subtitle": "Contact us to make your next adventure unforgettable!",
             "contact-us": "Contact Us"
         },
-        "highlights":{
-            "highlight-1":{
+        "highlights": {
+            "highlight-1": {
                 "text": "Ibiza & Formentera",
                 "image": "/on-the-wave/resources/media/yacht/yacht_1.webp"
             },
@@ -90,39 +92,24 @@ export const english = {
                 "image": "/on-the-wave/resources/media/yacht/yacht_3.webp"
             }
         },
-        "tours":{
-            "tour-1":{
-                "destination": "Greece",
-                "price": "3500$",
-                "main-photo": "/on-the-wave/resources/media/yacht/yacht_1.webp",
-                "tour-page": "/on-the-wave/tour1.html"
+        "tours": {
+            "tour-1": {
+                "id": "greece"
             },
             "tour-2": {
-                "destination": "Greece",
-                "price": "3500$",
-                "main-photo": "/on-the-wave/resources/media/yacht/yacht_2.webp",
-                "tour-page": "/on-the-wave/tour1.html"
+                "id": "greece"
             },
             "tour-3": {
-                "destination": "Greece",
-                "price": "3500$",
-                "main-photo": "/on-the-wave/resources/media/yacht/yacht_3.webp",
-                "tour-page": "/on-the-wave/tour1.html"
+                "id": "greece"
             },
             "tour-4": {
-                "destination": "Greece",
-                "price": "3500$",
-                "main-photo": "/on-the-wave/resources/media/animals/star_1.webp",
-                "tour-page": "/on-the-wave/tour1.html"
+                "id": "greece"
             },
             "tour-5": {
-                "destination": "Greece",
-                "price": "3500$",
-                "main-photo": "/on-the-wave/resources/media/animals/star_1.webp",
-                "tour-page": "/on-the-wave/tour1.html"
+                "id": "greece"
             }
         },
-        "contact":{
+        "contact": {
             "page-title": "Contact Us",
             "page-subtitle": "We are always happy to help you with any questions you may have. Contact us and we will get back to you as soon as possible.",
             "write-to-us": "Write to Us",
@@ -135,8 +122,25 @@ export const english = {
             "phone-one-href": Org.COMPANY_PHONE_UKR_PRIMARY_HREF,
             "phone-two-href": Org.COMPANY_PHONE_UKR_SECONDARY_HREF,
             "email": Org.COMPANY_EMAIL,
-        }
-
+        },
+        "faq": [
+            {
+                question: "What should I wear/bring?",
+                answer: "We recommend comfortable clothing and layers as it can get cooler on the water. Don't forget your camera, sunscreen, and sunglasses."
+            },
+            {
+                question: "Is the tour suitable for children?",
+                answer: "Yes, children of all ages are welcome. We have life jackets available in all sizes."
+            },
+            {
+                question: "What happens if the weather is bad?",
+                answer: "If we need to cancel due to weather, you'll be offered a full refund or the option to reschedule."
+            },
+            {
+                question: "Are there restrooms on board?",
+                answer: "Yes, our yacht is equipped with clean restroom facilities."
+            }
+        ],
     },
     "metadata": { "tagId": "en-GB", "flag": "fi fi-gb", "displayName": "EN" }
 }

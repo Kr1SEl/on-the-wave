@@ -120,6 +120,40 @@
     font-size: 0.8rem;
 }
 
+#emailNewsletter{
+    border-color: var(--primary-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-width: 2px;
+}
+
+#newsletterSubmitBtn{
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#emailNewsletter:hover {
+    color: var(--secondary-color);
+}
+
+#newsletterSubmitBtn:hover {
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+}
+
+#emailNewsletter:focus,
+#emailNewsletter:focus-within {
+    border-color: var(--secondary-color);
+}
+
+#newsletterSubmitBtn:focus,
+#newsletterSubmitBtn:focus-within {
+    border-color: var(--secondary-accent);
+    background-color: var(--secondary-accent);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer-container {

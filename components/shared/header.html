@@ -1,29 +1,47 @@
 <!-- Desktop Navbar -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light navbar-transparent fixed-top">
-    <div class="container nav-container">
-        <a class="navbar-brand" href="/on-the-wave/">
-            <img src="/on-the-wave/resources/media/logo.png" alt="" role="presentation" width="80" height="80">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <!-- Logo/Brand -->
+        <a class="navbar-brand flex-shrink-0 flex items-center"" href=" /on-the-wave/">
+            <img src="/on-the-wave/resources/media/logo-notext.webp" alt="Logo" role="presentation" width="50"
+                height="50">
+            <span class="ml-2 text-2xl font-bold text-white nav-title" data-translate="company.title"></span>
         </a>
+
+        <!-- Menu Toggler -->
         <button class="navbar-toggler d-lg-none" type="button" id="menu-toggler" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <button class="nav-link" id="headerGalleryButton" data-translate="nav.gallery"></button>
+
+        <!-- Desktop Navigation -->
+        <div id="navbarNav" class="hidden lg:flex items-center space-x-8">
+            <ul class="flex space-x-6">
+                <li>
+                    <button class="nav-link text-lg" id="headerGalleryButton" data-translate="nav.gallery"></button>
                 </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="headerBlogButton" data-translate="nav.blog"></button>
+                <li>
+                    <button class="nav-link text-lg" id="headerBlogButton" data-translate="nav.blog"></button>
                 </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="headerContactButton" data-translate="nav.contact"></button>
+                <li>
+                    <button class="nav-link text-lg" id="headerContactButton" data-translate="nav.contact"></button>
                 </li>
-                <li class="nav-item">
-                    <button class="btn btn-all-tours" id="headerToursButton" data-translate="nav.tours"></button>
+                <li>
+                    <button
+                        class="relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                        id="headerToursButton">
+                        <span class="relative z-10" data-translate="nav.tours"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+                        <span
+                            class="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-4/5 group-hover:left-1/10 transition-all duration-300 rounded-full"></span>
+                    </button>
                 </li>
             </ul>
+
+            <!-- Language Dropdown -->
             <div class="dropdown">
-                <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn" data-bs-toggle="dropdown">
+                <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn"
+                    data-bs-toggle="dropdown">
                     🌐 Language
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu">
@@ -35,20 +53,26 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div id="overlay-menu" class="overlay-menu">
+<div id="overlay-menu" class="overlay-menu space-y-2">
     <button id="close-overlay" class="close-overlay">&times;</button>
-    <ul class="menu-links">
-        <li><button class="nav-link" id="headerGalleryButton" data-translate="nav.gallery"></button></li>
-        <li><button class="nav-link" id="headerBlogButton" data-translate="nav.blog"></button></li>
-        <li><button class="nav-link" id="headerContactButton" data-translate="nav.contact"></button></li>
-        <li><button class="nav-link" id="headerToursButton" data-translate="nav.tours"></button></li>
+    <ul class="flex flex-col items-center space-y-4">
+        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerGalleryButton"
+                data-translate="nav.gallery"></button></li>
+        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerBlogButton"
+                data-translate="nav.blog"></button></li>
+        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerContactButton"
+                data-translate="nav.contact"></button></li>
+        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerToursButton"
+                data-translate="nav.tours"></button></li>
     </ul>
     <div class="social-buttons-header">
-        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
         <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
     <div class="dropdown">
-        <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn-mobile" data-bs-toggle="dropdown" tabindex="3">
+        <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn-mobile"
+            data-bs-toggle="dropdown" tabindex="3">
             🌐 Language
         </button>
         <div class="dropdown-menu" id="dropdown-menu-mobile">

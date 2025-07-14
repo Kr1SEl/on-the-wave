@@ -1,9 +1,22 @@
-import { applyTranslations } from "../lang/translations.js";
-import { translationData } from "../lang/translations.js";
+import { applyTranslations, getTourData, translationData } from "../lang/translations.js";
 import { injectHomepageButtonsLogic } from "../controllers/buttonsController.js";
 
 const prefLang = localStorage['prefLang'];
 let prevChunksize = 0;
+
+export async function injectParallax() {
+    const headerContainer = document.getElementById('parallax');
+    try {
+        const response = await fetch('/on-the-wave/components/shared/parallax.html')
+        if (response.ok) {
+            headerContainer.innerHTML = await response.text();
+        } else {
+            console.error('Failed to load Parallax:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error loading Parallax:', error);
+    }
+}
 
 function createCarousel(chunkSize) {
     const tours = translationData[prefLang]["tours"];
@@ -24,14 +37,15 @@ function createCarousel(chunkSize) {
 
         chunk.forEach((key) => {
             const tour = tours[key];
+            const tourData = getTourData(tour.id)
 
             const card = `
                 <div class="card destination-card mx-2 my-3">
-                    <img src="${tour["main-photo"]}" class="card-img-top" alt="${tour.destination}">
+                    <img src="${tourData["hero-image"]}" class="card-img-top" alt="${tourData.title}">
                     <div class="card-body">
-                        <h5 class="card-title">${tour.destination}</h5>
-                        <p class="card-text">${tour.price}</p>
-                        <a href="${tour["tour-page"]}" class="btn btn-primary">View Tour</a>
+                        <h5 class="card-title">${tourData.title}</h5>
+                        <p class="card-text">${tourData.price}</p>
+                        <button id="tourPage${tour["id"]}" class="btn btn-primary">View Tour</button>
                     </div>
                 </div>
             `;
@@ -76,18 +90,18 @@ function injectGalleryContent() {
     });
 }
 
-function resizeCarousel(){
+function resizeCarousel() {
     const windowSize = window.innerWidth;
     let chunkSize;
-    if (windowSize < 992){
+    if (windowSize < 992) {
         chunkSize = 1;
-    }else if(windowSize < 1400){
+    } else if (windowSize < 1400) {
         chunkSize = 2;
-    }else{
+    } else {
         chunkSize = 3;
     }
 
-    if (prevChunksize != chunkSize){
+    if (prevChunksize != chunkSize) {
         createCarousel(chunkSize);
         prevChunksize = chunkSize;
     }
@@ -99,6 +113,7 @@ export function loadHomePage() {
         applyTranslations("home");
         injectGalleryContent();
         resizeCarousel();
+        injectParallax();
         injectHomepageButtonsLogic();
 
         window.removeEventListener("resize", resizeCarousel);

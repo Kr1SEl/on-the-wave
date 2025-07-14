@@ -4,8 +4,18 @@ body {
     color: var(--primary-color);
 }
 
-hr{
+hr {
     width: 100%;
+}
+
+@keyframes shine {
+    100% {
+        left: 150%;
+    }
+}
+
+.animate-shine {
+    animation: shine 8s infinite ease-in-out;
 }
 
 #alert-container {
@@ -32,9 +42,9 @@ hr{
 
 #alert-container .alert.hide {
     opacity: 0;
-  }
+}
 
-.wave-header{
+.wave-header {
     margin-bottom: 3px !important;
 }
 
@@ -109,11 +119,6 @@ hr{
     filter: invert(34%) sepia(56%) saturate(1905%) hue-rotate(196deg) brightness(95%) contrast(89%);
 }
 
-.gallery .text-center {
-    display: block;
-    text-align: center;
-}
-
 .video-section {
     position: relative;
     margin: 0;
@@ -133,7 +138,7 @@ hr{
     margin: 0% !important;
     bottom: -2px;
     width: 100%;
-    height: 15%;
+    height: 20%;
     background-color: var(--primary-color);
     color: var(--light-text-color);
     display: flex;
@@ -256,7 +261,7 @@ hr{
     grid-column: span 3;
 }
 
-.gap{
+.gap {
     padding-top: 5%;
 }
 
@@ -349,21 +354,21 @@ hr{
 
 @media (min-width: 1200px) {
     .carousel-control-prev {
-        left: -60px;
+        left: -30px;
     }
 
     .carousel-control-next {
-        right: -60px;
+        right: -30px;
     }
 }
 
 @media (max-width: 1400px) {
     .carousel-control-prev {
-        left: -90px;
+        left: -20px;
     }
 
     .carousel-control-next {
-        right: -90px;
+        right: -20px;
     }
 
     .destination-card {
@@ -430,7 +435,7 @@ hr{
         width: 30px;
         height: 30px;
     }
-    
+
     .gallery-grid .gallery-item {
         grid-column: span 6;
     }

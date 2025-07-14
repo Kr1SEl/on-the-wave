@@ -4,9 +4,9 @@ nav {
 
 nav .nav-link,
 .btn-all-tours {
+    padding-top: 0.5rem;
     vertical-align: middle;
     color: var(--light-text-color);
-    transition: color 0.3s ease-in-out;
 }
 
 nav .nav-link:hover {
@@ -38,7 +38,8 @@ nav .nav-link:hover {
     box-shadow: 0px 8px 15px rgba(106, 128, 185, 0.5);
     transition: all 0.3s ease-in-out;
     position: relative;
-    clip-path: polygon(25% 0, 75% 5%, 100% 1%, 100% 100%, 0 100%, 0 4%);
+    /* clip-path: polygon(25% 0, 75% 5%, 100% 1%, 100% 100%, 0 100%, 0 4%); */
+    clip-path: polygon(50% 10%, 75% 0, 100% 15%, 100% 85%, 70% 100%, 30% 100%, 0 85%, 0 15%, 25% 0);
 }
 
 .btn-all-tours:hover {
@@ -89,8 +90,6 @@ nav .nav-link:hover {
 }
 
 .dropdown-menu a {
-    transition: color 0.15s ease-in-out background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out;
     color: var(--light-text-color) !important;
 }
 
@@ -214,33 +213,35 @@ nav .nav-link:hover {
     border-radius: 12px;
     text-align: center;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #overlay-menu .language-selector:hover,
 #overlay-menu .language-selector:focus {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
     outline: 3px solid var(--secondary-accent);
 }
 
 #overlay-menu .dropdown-menu {
-    margin-top: 8px;
-    border-radius: 12px;
     background: var(--dark-background-color);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
 #overlay-menu .dropdown-item {
-    padding: 12px 16px;
-    font-size: 16px;
     color: var(--text-accent) !important;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease, color 0.2s ease, outline 0.2s ease;
+}
+
+#overlay-menu .dropdown-menu:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+#overlay-menu .dropdown-item:hover,
+#overlay-menu .dropdown-item:focus {
+    background-color: var(--secondary-color);
 }
 
 /* Disable mobile view on desktop */

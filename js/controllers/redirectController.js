@@ -1,11 +1,11 @@
 import { loadHomePage } from "../pages/home.js";
 import { loadContactPage } from "../pages/contact.js";
 import { loadBlogPage } from "../pages/blogPost.js"
+import { loadTourPage } from "../pages/tour.js";
 
 let lastScrollTarget = null;
 
 export async function loadPage(page, id = null) {
-    console.log(page);
     const pageMappings = {
         "gallery": {
             url: "/on-the-wave/components/pages/home.html",
@@ -46,6 +46,14 @@ export async function loadPage(page, id = null) {
                     scrollToSection("tours-section");
                 });
             },
+        },
+        "tour": {
+            url: "/on-the-wave/components/pages/tour.html",
+            callback: () => {
+                loadTourPage(id).then(() => {
+                    scrollToTop();
+                });
+            }
         },
         "": {
             url: "/on-the-wave/components/pages/home.html",
