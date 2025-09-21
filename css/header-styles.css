@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.dropdown-item:hover {
+    background-color: var(--primary-accent);
+}
+
 /* Mobile Nav */
 .navbar-toggler-icon {
     width: 24px;
