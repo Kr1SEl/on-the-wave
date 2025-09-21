@@ -46,21 +46,5 @@ export const tourData_en = {
             "/on-the-wave/resources/media/team/team_3.webp",
             "/on-the-wave/resources/media/team/team_5.webp"
         ],
-        "included": [
-            "3-hour sailing cruise",
-            "Professional captain and crew",
-            "Complimentary drinks (beer, wine, soft drinks)",
-            "Light snacks",
-            "Safety equipment",
-            "Coastal commentary"
-        ],
-        "excluded": [
-            "Transportation to/from marina",
-            "Gratuities (recommended)",
-            "Additional alcoholic beverages",
-            "Souvenirs",
-            "Travel insurance"
-        ],
-
     }
 };

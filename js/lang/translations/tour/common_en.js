@@ -24,5 +24,20 @@ export const tourCommon_en = {
         "no-fee-title": "No booking fees",
         "expert-guides-title": "Expert guides",
         "small-group-title": "Small group sizes",
+        "included": [
+            "3-hour sailing cruise",
+            "Professional captain and crew",
+            "Complimentary drinks (beer, wine, soft drinks)",
+            "Light snacks",
+            "Safety equipment",
+            "Coastal commentary"
+        ],
+        "excluded": [
+            "Transportation to/from marina",
+            "Gratuities (recommended)",
+            "Additional alcoholic beverages",
+            "Souvenirs",
+            "Travel insurance"
+        ],
     }
 };

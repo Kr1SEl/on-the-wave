@@ -185,6 +185,10 @@ export function injectTourData(id) {
             `;
         galleryContainer.appendChild(imageElement);
     });
+}
+
+export function injectIncludedExcluded() {
+    let tourTranslations = getSelectedTranslations(tourTranslationCommon, "data");
 
     // Included/Excluded
     const includedContainer = document.getElementById('tourIncluded');
