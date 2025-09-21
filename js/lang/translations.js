@@ -63,7 +63,7 @@ function getSelectedTranslations(translations, id) {
     return translations[prefLang][id];
 }
 
-export function getTourData(id){
+export function getTourData(id) {
     return getSelectedTranslations(tourTranslationData, id);
 }
 
@@ -122,25 +122,26 @@ function applyTranslationsWithoutId(targetPage) {
     });
 }
 
-export function injectContact() {
+export function injectNewsletter() {
     let contactTranslations = getSelectedTranslations(commonTranslationData, "common");
 
     const emailNewsletterInput = document.getElementById("emailNewsletter");
     emailNewsletterInput.placeholder = contactTranslations["footer.newsletter.email-placeholder"];
+}
+
+export function injectContact() {
+    let contactTranslations = getSelectedTranslations(commonTranslationData, "common");
 
     const phones = document.querySelectorAll('a[href*="tel"]');
 
     const phoneOne = phones[0];
     phoneOne.href = `tel:${contactTranslations["phone-one-href"].replace(/\s+/g, "")}`;
-    phoneOne.querySelector('span').textContent = contactTranslations["phone-one"];
 
     const phoneTwo = phones[1];
     phoneTwo.href = `tel:${contactTranslations["phone-two-href"].replace(/\s+/g, "")}`;
-    phoneTwo.querySelector('span').textContent = contactTranslations["phone-two"];
 
     const email = document.querySelector('a[href*="mailto"]');
     email.href = `mailto:${contactTranslations["email"]}`;
-    email.querySelector('span').textContent = contactTranslations["email"];
 }
 
 export function injectTourData(id) {

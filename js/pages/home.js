@@ -1,22 +1,9 @@
 import { applyTranslations, getTourData, translationData } from "../lang/translations.js";
 import { injectHomepageButtonsLogic } from "../controllers/buttonsController.js";
+import { injectParallax } from "../main.js"
 
 const prefLang = localStorage['prefLang'];
 let prevChunksize = 0;
-
-export async function injectParallax() {
-    const headerContainer = document.getElementById('parallax');
-    try {
-        const response = await fetch('/on-the-wave/components/shared/parallax.html')
-        if (response.ok) {
-            headerContainer.innerHTML = await response.text();
-        } else {
-            console.error('Failed to load Parallax:', response.statusText);
-        }
-    } catch (error) {
-        console.error('Error loading Parallax:', error);
-    }
-}
 
 function createCarousel(chunkSize) {
     const tours = translationData[prefLang]["tours"];

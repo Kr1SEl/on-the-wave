@@ -20,23 +20,23 @@
         <div id="navbarNav" class="hidden lg:flex items-center space-x-8">
             <ul class="flex space-x-6">
                 <li>
-                    <button id="headerGalleryButton"
-                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                    <button id="headerGalleryButtonDesktop"
+                        class="headerGalleryButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
                         data-translate="nav.gallery"></button>
                 </li>
                 <li>
-                    <button id="headerBlogButton"
-                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                    <button id="headerBlogButtonDesktop"
+                        class="headerBlogButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
                         data-translate="nav.blog"></button>
                 </li>
                 <li>
-                    <button id="headerContactButton"
-                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                    <button id="headerContactButtonDesktop"
+                        class="headerContactButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
                         data-translate="nav.contact"></button>
                 </li>
                 <li>
-                    <button id="headerToursButton"
-                        class="relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <button id="headerToursButtonDesktop"
+                        class="headerToursButton relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
                         <span class="relative z-10" data-translate="nav.tours"></span>
                         <span
                             class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
@@ -65,20 +65,26 @@
     <button id="closeOverlay"
         class="absolute top-5 right-8 text-4xl text-yellow-300 hover:text-yellow-400">&times;</button>
     <ul class="flex flex-col items-center space-y-6">
-        <li><button id="headerGalleryButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
-                data-translate="nav.gallery"></button></li>
-        <li><button id="headerBlogButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
+        <li><button id="headerGalleryButtonMobile"
+                class="headerGalleryButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.gallery"></button>
+        </li>
+        <li><button id="headerBlogButtonMobile" class="headerBlogButton text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.blog"></button></li>
-        <li><button id="headerContactButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
+        <li><button id="headerContactButtonMobile"
+                class="headerContactButton text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.contact"></button></li>
-        <li><button id="headerToursButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
+        <li><button id="headerToursButtonMobile"
+                class="headerToursButton text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.tours"></button></li>
     </ul>
     <div class="flex justify-center gap-4 mt-8">
         <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"
-            class="text-2xl text-yellow-300 hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+            class="text-2xl text-yellow-300 hover:text-yellow-400" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
         <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"
-            class="text-2xl text-yellow-300 hover:text-yellow-400"><i class="fab fa-telegram"></i></a>
+            class="text-2xl text-yellow-300 hover:text-yellow-400" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-telegram"></i></a>
     </div>
     <div class="dropdown">
         <button id="langMenuBtnMobile" type="button"

@@ -1,4 +1,4 @@
-import { applyTranslations } from "../lang/translations.js";
+import { applyTranslations, injectContact } from "../lang/translations.js";
 import { showAlert } from "../controllers/alertController.js";
 import { EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE } from "../config/conf.js";
 
@@ -17,23 +17,24 @@ function submitForm(e) {
         phone: document.getElementById("phone").value,
         message: document.getElementById("message").value
     };
-    
+
     emailjs.send(EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE, formData)
         .then(
-        function (response) {
-            showAlert('Message sent successfully!', 'success');
-            document.getElementById("contactForm").reset();
-        },
-        function (error) {
-            showAlert('Failed to send a message. Please try again later.', 'danger');
-            console.error('EmailJS Error:', error);
-        }
-    );
+            function (response) {
+                showAlert('Message sent successfully!', 'success');
+                document.getElementById("contactForm").reset();
+            },
+            function (error) {
+                showAlert('Failed to send a message. Please try again later.', 'danger');
+                console.error('EmailJS Error:', error);
+            }
+        );
 }
 
 export function loadContactPage() {
     return new Promise((resolve) => {
         applyTranslations("contact");
+        injectContact();
         injectContactFormLogic();
         resolve();
     });

@@ -1,11 +1,9 @@
 <!-- Hero Section -->
-<section class="wave-bg text-white py-20 relative">
+<section class="wave-bg text-white pt-20 pb-10 relative">
     <div class="container mx-auto px-6 relative z-10">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Set Sail With Us</h1>
-        <p class="text-xl md:text-2xl mb-8">Contact our team to plan your perfect yachting adventure</p>
-        <a href="#contact-form"
-            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get
-            in Touch</a>
+        <br><br>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4" data-translate="page-title"></h1>
+        <p class="text-xl md:text-2xl mb-0" data-translate="page-subtitle"></p>
     </div>
 </section>
 
@@ -13,49 +11,41 @@
 
 <!-- Main Content -->
 <div class="container mx-auto px-6 py-16">
-    <div class="flex flex-col lg:flex-row gap-12">
+    <div class="flex flex-col lg:flex-row gap-12 items-stretch">
         <!-- Contact Form -->
-        <div class="lg:w-1/2">
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+        <div class="lg:w-1/2 flex flex-col">
+            <div class="bg-white rounded-xl shadow-lg p-8 flex-1">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6" data-translate="message-form-title"></h2>
                 <form id="contactForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <label for="name" class="block text-gray-700 font-medium mb-2"
+                                data-translate="customer-name"></label>
                             <input id="name" type="text" name="name" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input id="email" type="email" name="email" required
+                            <label for="phone" class="block text-gray-700 font-medium mb-2"
+                                data-translate="customer-phone"></label>
+                            <input id="phone" type="tel" name="phone"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
                         </div>
                     </div>
                     <div>
-                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                        <input id="phone" type="tel" name="phone"
+                        <label for="email" class="block text-gray-700 font-medium mb-2"
+                            data-translate="customer-email"></label>
+                        <input id="email" type="email" name="email" required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
                     </div>
                     <div>
-                        <label for="tour" class="block text-gray-700 font-medium mb-2">Interested Tour</label>
-                        <select id="tour" name="tour"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
-                            <option value="">Select a tour</option>
-                            <option value="Mediterranean Cruise">Mediterranean Cruise</option>
-                            <option value="Caribbean Adventure">Caribbean Adventure</option>
-                            <option value="Greek Islands Tour">Greek Islands Tour</option>
-                            <option value="Private Charter">Private Charter</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <label for="message" class="block text-gray-700 font-medium mb-2"
+                            data-translate="customer-message"></label>
                         <textarea id="message" name="message" rows="5" required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input"></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                        Send Message
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+                        data-translate="send-message">
                     </button>
                 </form>
                 <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
@@ -68,26 +58,21 @@
         </div>
 
         <!-- Contact Info -->
-        <div class="lg:w-1/2 space-y-8">
+        <div class="lg:w-1/2 flex flex-col h-full">
             <div class="bg-white rounded-xl shadow-lg p-8 contact-card">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6" data-translate="contact-info"></h2>
                 <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Our Office</h3>
-                            <p class="text-gray-600">Marina Bay, Yacht Club District<br>Monaco, 98000</p>
-                        </div>
-                    </div>
                     <div class="flex items-start">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
                             <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
-                            <p class="text-gray-600">+377 123 4567 (Office)<br>+377 987 6543 (24/7 Support)</p>
+                            <h3 class="text-lg font-semibold text-gray-800" data-translate="text-phone"></h3>
+                            <p class="text-gray-600">
+                                <a href="tel" class="hover:underline" data-translate="phone-one"></a>
+                                <br>
+                                <a href="tel" class="hover:underline" data-translate="phone-two"></a>
+                            </p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -95,8 +80,9 @@
                             <i class="fas fa-envelope text-blue-600 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Email</h3>
-                            <p class="text-gray-600">info@onthewaveyachting.com<br>bookings@onthewaveyachting.com
+                            <h3 class="text-lg font-semibold text-gray-800" data-translate="text-email"></h3>
+                            <p class="text-gray-600">
+                                <a href="mailto" class="hover:underline" data-translate="email"></a><br>
                             </p>
                         </div>
                     </div>
@@ -105,7 +91,7 @@
                             <i class="fas fa-clock text-blue-600 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Working Hours</h3>
+                            <h3 class="text-lg font-semibold text-gray-800" data-translate="text-working-hours"></h3>
                             <p class="text-gray-600">Monday - Friday: 9:00 - 18:00<br>Saturday: 10:00 -
                                 16:00<br>Sunday: Closed</p>
                         </div>
@@ -113,27 +99,20 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-8 contact-card">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Find Us On Social Media</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8 contact-card mt-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6" data-translate="find-us"></h2>
                 <div class="flex space-x-4">
                     <a href="#"
-                        class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
-                        <i class="fab fa-facebook-f text-xl"></i>
+                        class="bg-blue-600 text-white w-14 h-14 flex items-center justify-center rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fab fa-facebook-f text-3xl"></i>
                     </a>
                     <a href="#"
-                        class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition duration-300">
-                        <i class="fab fa-twitter text-xl"></i>
+                        class="bg-pink-600 text-white w-14 h-14 flex items-center justify-center rounded-full hover:bg-pink-700 transition duration-300">
+                        <i class="fab fa-instagram text-3xl"></i>
                     </a>
                     <a href="#"
-                        class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition duration-300">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#"
-                        class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition duration-300">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition duration-300">
-                        <i class="fab fa-youtube text-xl"></i>
+                        class="bg-blue-400 text-white w-14 h-14 flex items-center justify-center rounded-full hover:bg-blue-500 transition duration-300">
+                        <i class="fab fa-telegram text-3xl"></i>
                     </a>
                 </div>
             </div>

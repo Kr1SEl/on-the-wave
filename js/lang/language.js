@@ -4,29 +4,21 @@ import { translationMetadata } from "./translations.js";
 export function initLanguage(elementId, btnId) {
     const languageMenu = document.getElementById(elementId);
     const currentLanguage = storageController.getPreferredLanguage()
-    console.log("Init language started")
     const menuBtn = document.getElementById(btnId)
     menuBtn.setAttribute('aria-haspopup', 'true');
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.setAttribute('tabindex', '0');
     menuBtn.innerHTML = `<span class="${translationMetadata[currentLanguage]['flag']}" 
                             id="langSpan" role="presentation"></span>&ensp;${translationMetadata[currentLanguage]["displayName"]}`
-    console.log("Attributes set")
     menuBtn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-            console.log("Toggle")
             e.preventDefault();
             toggleDropdown();
         }
     });
 
-    console.log("menuBtn:", menuBtn);
-    console.log("languageMenu:", languageMenu);
-
     function toggleDropdown() {
-        console.log("Toggle dropdown start")
         const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        console.log("Toggle dropdown mid")
         menuBtn.setAttribute('aria-expanded', !isExpanded);
         languageMenu.classList.toggle('show', !isExpanded);
     }

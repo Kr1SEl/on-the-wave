@@ -1,31 +1,31 @@
-export function injectHeaderButtonsLogic(){
-    const galleryButton = document.getElementById("headerGalleryButton");
-    const contactButton = document.getElementById("headerContactButton");
-    const blogButton = document.getElementById("headerBlogButton");
-    const toursButton = document.getElementById("headerToursButton");
+export function injectHeaderButtonsLogic() {
+    const galleryButton = document.querySelectorAll(".headerGalleryButton");
+    const contactButton = document.querySelectorAll(".headerContactButton");
+    const blogButton = document.querySelectorAll(".headerBlogButton");
+    const toursButton = document.querySelectorAll(".headerToursButton");
 
     if (galleryButton) {
-        galleryButton.removeEventListener("click", () => loadPage("gallery"));
-        galleryButton.addEventListener("click", () => loadPage("gallery"));
+        galleryButton.forEach(btn => btn.removeEventListener("click", () => loadPage("gallery")));
+        galleryButton.forEach(btn => btn.addEventListener("click", () => loadPage("gallery")));
     }
 
     if (contactButton) {
-        contactButton.removeEventListener("click", () => loadPage("contact"));
-        contactButton.addEventListener("click", () => loadPage("contact"));
+        contactButton.forEach(btn => btn.removeEventListener("click", () => loadPage("contact")));
+        contactButton.forEach(btn => btn.addEventListener("click", () => loadPage("contact")));
     }
 
     if (blogButton) {
-        blogButton.removeEventListener("click", () => loadPage("blog"));
-        blogButton.addEventListener("click", () => loadPage("blog"));
+        blogButton.forEach(btn => btn.removeEventListener("click", () => loadPage("blog")));
+        blogButton.forEach(btn => btn.addEventListener("click", () => loadPage("blog")));
     }
 
     if (toursButton) {
-        toursButton.removeEventListener("click", () => loadPage("tours"));
-        toursButton.addEventListener("click", () => loadPage("tours"));
+        toursButton.forEach(btn => btn.removeEventListener("click", () => loadPage("tours")));
+        toursButton.forEach(btn => btn.addEventListener("click", () => loadPage("tours")));
     }
 }
 
-export function injectHomepageButtonsLogic(){
+export function injectHomepageButtonsLogic() {
     const contactButton = document.getElementById("contactButton");
     const blogPostButtons = document.querySelectorAll('[id^="blogPost"]');
     const toursButtons = document.querySelectorAll('[id^="tourPage"]');
@@ -55,7 +55,16 @@ export function injectHomepageButtonsLogic(){
     });
 }
 
-export function injectFooterButtonsLogic(){
+export function injectParallaxButtonsLogic() {
+    const bookTourButton = document.getElementById("parallaxButton");
+
+    if (bookTourButton) {
+        bookTourButton.removeEventListener("click", () => loadPage("contact"));
+        bookTourButton.addEventListener("click", () => loadPage("contact"));
+    }
+}
+
+export function injectFooterButtonsLogic() {
     const galleryButton = document.getElementById("footerGalleryButton");
     const contactButton = document.getElementById("footerContactButton");
     const blogButton = document.getElementById("footerBlogButton");

@@ -1,10 +1,9 @@
 import { initLanguage } from "./lang/language.js";
-import { applyTranslations } from "./lang/translations.js";
-import { injectContact } from "./lang/translations.js";
+import { applyTranslations, injectNewsletter, injectContact } from "./lang/translations.js";
 import { loadPage } from "./controllers/redirectController.js";
 import { showAlert } from "./controllers/alertController.js";
 import { EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE } from "./config/conf.js";
-import { injectHeaderButtonsLogic, injectFooterButtonsLogic } from "./controllers/buttonsController.js";
+import { injectHeaderButtonsLogic, injectFooterButtonsLogic, injectParallaxButtonsLogic } from "./controllers/buttonsController.js";
 
 async function injectHeader() {
     const headerContainer = document.getElementById('header');
@@ -62,12 +61,29 @@ export function injectMobileMenu() {
     });
 }
 
+export async function injectParallax() {
+    const parallaxContainer = document.getElementById('parallax');
+    try {
+        const response = await fetch('/on-the-wave/components/shared/parallax.html')
+        if (response.ok) {
+            parallaxContainer.innerHTML = await response.text();
+            injectParallaxButtonsLogic();
+            applyTranslations();
+        } else {
+            console.error('Failed to load Parallax:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error loading Parallax:', error);
+    }
+}
+
 async function injectFooter() {
     const headerContainer = document.getElementById('footer');
     try {
         const response = await fetch('/on-the-wave/components/shared/footer.html')
         if (response.ok) {
             headerContainer.innerHTML = await response.text();
+            injectNewsletter();
             injectContact();
             applyTranslations();
             injectFooterEmailLogic();

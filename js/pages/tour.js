@@ -1,5 +1,5 @@
 import { applyTranslations, injectTourData, injectFaqTranslations } from "../lang/translations.js";
-import { injectParallax } from "./home.js"
+import { injectParallax } from "../main.js"
 
 export function loadTourPage(id) {
     return new Promise((resolve) => {
@@ -11,7 +11,7 @@ export function loadTourPage(id) {
     });
 }
 
-async function injectFAQ(){
+async function injectFAQ() {
     const headerContainer = document.getElementById('faq');
     try {
         const response = await fetch('/on-the-wave/components/shared/faq.html')
