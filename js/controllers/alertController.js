@@ -21,7 +21,7 @@ export function showAlert(message, type) {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
 
-    const alertContainer = document.getElementById('alert-container');
+    const alertContainer = document.getElementById('alertContainer');
     alertContainer.appendChild(alert);
 
     setTimeout(() => {

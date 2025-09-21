@@ -18,7 +18,7 @@ hr {
     animation: shine 8s infinite ease-in-out;
 }
 
-#alert-container {
+#alertContainer {
     position: fixed;
     top: 0;
     left: 50%;
@@ -32,7 +32,7 @@ hr {
     padding: 1rem;
 }
 
-#alert-container .alert {
+#alertContainer .alert {
     pointer-events: auto;
     max-width: 90%;
     text-align: center;
@@ -40,7 +40,7 @@ hr {
     opacity: 1;
 }
 
-#alert-container .alert.hide {
+#alertContainer .alert.hide {
     opacity: 0;
 }
 

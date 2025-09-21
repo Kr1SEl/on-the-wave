@@ -1,15 +1,18 @@
 <!-- Desktop Navbar -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+<nav id="navbar"
+    class="bg-sky-800 text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent min-h-20">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
         <!-- Logo/Brand -->
-        <a class="navbar-brand flex-shrink-0 flex items-center"" href=" /on-the-wave/">
+        <a class="flex-shrink-0 flex items-center" href="/on-the-wave/">
             <img src="/on-the-wave/resources/media/logo-notext.webp" alt="Logo" role="presentation" width="50"
                 height="50">
             <span class="ml-2 text-2xl font-bold text-white nav-title" data-translate="company.title"></span>
         </a>
 
         <!-- Menu Toggler -->
-        <button class="navbar-toggler d-lg-none" type="button" id="menu-toggler" aria-expanded="false">
+        <button id="menuToggler"
+            class="lg:hidden p-2 rounded-md bg-yellow-600 hover:bg-yellow-700 transition duration-300" type="button"
+            aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -17,18 +20,23 @@
         <div id="navbarNav" class="hidden lg:flex items-center space-x-8">
             <ul class="flex space-x-6">
                 <li>
-                    <button class="nav-link text-lg" id="headerGalleryButton" data-translate="nav.gallery"></button>
+                    <button id="headerGalleryButton"
+                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.gallery"></button>
                 </li>
                 <li>
-                    <button class="nav-link text-lg" id="headerBlogButton" data-translate="nav.blog"></button>
+                    <button id="headerBlogButton"
+                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.blog"></button>
                 </li>
                 <li>
-                    <button class="nav-link text-lg" id="headerContactButton" data-translate="nav.contact"></button>
+                    <button id="headerContactButton"
+                        class="py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.contact"></button>
                 </li>
                 <li>
-                    <button
-                        class="relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-                        id="headerToursButton">
+                    <button id="headerToursButton"
+                        class="relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
                         <span class="relative z-10" data-translate="nav.tours"></span>
                         <span
                             class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
@@ -39,12 +47,12 @@
             </ul>
 
             <!-- Language Dropdown -->
-            <div class="dropdown">
-                <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn"
-                    data-bs-toggle="dropdown">
+            <div class="relative">
+                <button id="langMenuBtn" type="button" data-bs-toggle="dropdown"
+                    class="bg-white bg-opacity-10 border border-white border-opacity-20 text-white px-3 py-1 rounded hover:bg-opacity-20 transition-colors ml-2">
                     🌐 Language
                 </button>
-                <div class="dropdown-menu" id="dropdown-menu">
+                <div id="dropdownMenu" class="dropdown-menu">
                     <!-- JS -->
                 </div>
             </div>
@@ -53,29 +61,32 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div id="overlay-menu" class="overlay-menu space-y-2">
-    <button id="close-overlay" class="close-overlay">&times;</button>
-    <ul class="flex flex-col items-center space-y-4">
-        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerGalleryButton"
+<div id="overlayMenu" class="overlay-menu space-y-2">
+    <button id="closeOverlay"
+        class="absolute top-5 right-8 text-4xl text-yellow-300 hover:text-yellow-400">&times;</button>
+    <ul class="flex flex-col items-center space-y-6">
+        <li><button id="headerGalleryButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.gallery"></button></li>
-        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerBlogButton"
+        <li><button id="headerBlogButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.blog"></button></li>
-        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerContactButton"
+        <li><button id="headerContactButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.contact"></button></li>
-        <li><button class="nav-link text-2xl text-yellow-200 hover:text-yellow-400" id="headerToursButton"
+        <li><button id="headerToursButton" class="text-2xl text-yellow-300 hover:text-yellow-400"
                 data-translate="nav.tours"></button></li>
     </ul>
-    <div class="social-buttons-header">
-        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
-        <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    <div class="flex justify-center gap-4 mt-8">
+        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"
+            class="text-2xl text-yellow-300 hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"
+            class="text-2xl text-yellow-300 hover:text-yellow-400"><i class="fab fa-telegram"></i></a>
     </div>
     <div class="dropdown">
-        <button type="button" class="language-selector dropdown-toggle" id="lang-menu-btn-mobile"
+        <button id="langMenuBtnMobile" type="button"
+            class="bg-white bg-opacity-10 border border-white border-opacity-20 text-white px-3 py-1 rounded hover:bg-opacity-20 transition-colors ml-2"
             data-bs-toggle="dropdown" tabindex="3">
             🌐 Language
         </button>
-        <div class="dropdown-menu" id="dropdown-menu-mobile">
+        <div id="dropdownMenuMobile" class="dropdown-menu">
             <!--JS -->
         </div>
     </div>

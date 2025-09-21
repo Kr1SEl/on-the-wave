@@ -1,62 +1,31 @@
-.contact-section {
-    padding: 50px 0;
+.wave-bg {
+    background-image: url('/on-the-wave/resources/media/yacht/yacht_1.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
 }
 
-.contact-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-
-.form-control {
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
-}
-
-.btn-custom {
-    background-color: var(--secondary-color);
-    color: #fff;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: bold;
+.wave-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-}
-
-.btn-custom:hover {
-    background-color: #e5b377;
-}
-
-.social-icons a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin: 10px;
-    color: var(--primary-color);
-}
-
-.social-icons a:hover {
-    color: var(--secondary-color);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contact-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .contact-box {
-        padding: 20px;
-    }
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }

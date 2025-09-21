@@ -11,7 +11,7 @@ export async function loadPage(page, id = null) {
             url: "/on-the-wave/components/pages/home.html",
             callback: () => {
                 loadHomePage().then(() => {
-                    scrollToSection("gallery-section");
+                    scrollToSection("gallerySection");
                 });
             },
         },
@@ -19,7 +19,7 @@ export async function loadPage(page, id = null) {
             url: "/on-the-wave/components/pages/home.html",
             callback: () => {
                 loadHomePage().then(() => {
-                    scrollToSection("blog-section");
+                    scrollToSection("blogSection");
                 });
             },
         },
@@ -33,7 +33,7 @@ export async function loadPage(page, id = null) {
         },
         "contact": {
             url: "/on-the-wave/components/pages/contact.html",
-            callback: () => { 
+            callback: () => {
                 loadContactPage().then(() => {
                     scrollToTop();
                 });
@@ -43,7 +43,7 @@ export async function loadPage(page, id = null) {
             url: "/on-the-wave/components/pages/home.html",
             callback: () => {
                 loadHomePage().then(() => {
-                    scrollToSection("tours-section");
+                    scrollToSection("toursSection");
                 });
             },
         },

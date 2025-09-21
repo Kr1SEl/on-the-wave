@@ -1,53 +1,64 @@
-<footer class="site-footer py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="bg-sky-800 text-white py-12">
+    <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Social Media Section -->
             <div>
-                <h5 class="text-xl font-bold mb-4" data-translate="footer.social.title"></h5>
-                <p class="" data-translate="footer.social.description"></p>
+                <h3 class="text-xl font-bold mb-4" data-translate="footer.social.title"></h3>
+                <p class="text-white-400" data-translate="footer.social.description"></p>
                 <div class="flex space-x-4 mt-2">
                     <a href="https://www.instagram.com/onthewaveyachting/"
-                        class="nav-link hover:text-yellow-600 text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://t.me/+UJVC01DzEiStD15a" class="nav-link hover:text-yellow-600 text-2xl"><i
-                            class="fab fa-telegram"></i></a>
+                        class="text-white-400 hover:text-yellow-400 transition duration-300 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://t.me/+UJVC01DzEiStD15a"
+                        class="text-white-400 hover:text-yellow-400 transition duration-300 text-2xl">
+                        <i class="fab fa-telegram"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Quick Links Section -->
             <div>
-                <h5 class="text-xl font-bold mb-4" data-translate="footer.quick-links"></h5>
+                <h4 class="text-lg font-semibold mb-4" data-translate="footer.quick-links"></h4>
                 <ul class="space-y-2">
-                    <li><button class="nav-link hover:text-yellow-600 transition-colors duration-200"
-                            id="footerGalleryButton" data-translate="nav.gallery"></button></li>
-                    <li><button class="nav-link hover:text-yellow-600 transition-colors duration-200"
-                            id="footerBlogButton" data-translate="nav.blog"></button></li>
-                    <li><button class="nav-link hover:text-yellow-600 transition-colors duration-200"
-                            id="footerContactButton" data-translate="nav.contact"></button></li>
-                    <li><button class="nav-link hover:text-yellow-600 transition-colors duration-200"
-                            id="footerToursButton" data-translate="nav.tours"></button></li>
+                    <li>
+                        <button id="footerGalleryButton" class="text-white-400 hover:text-yellow-400 transition duration-300"
+                            data-translate="nav.gallery"></button>
+                    </li>
+                    <li>
+                        <button id="footerBlogButton" class="text-white-400 hover:text-yellow-400 transition duration-300"
+                            data-translate="nav.blog"></button>
+                    </li>
+                    <li>
+                        <button id="footerContactButton" class="text-white-400 hover:text-yellow-400 transition duration-300"
+                            data-translate="nav.contact"></button>
+                    </li>
+                    <li>
+                        <button id="footerToursButton" class="text-white-400 hover:text-yellow-400 transition duration-300" 
+                            data-translate="nav.tours"></button>
+                    </li>
                 </ul>
             </div>
 
             <!-- Contact Info Section -->
             <div>
-                <h5 class="text-xl font-bold mb-4" data-translate="footer.contact-us"></h5>
+                <h4 class="text-lg font-semibold mb-4" data-translate="footer.contact-us"></h4>
                 <div class="space-y-3">
-                    <p class="flex items-center ">
+                    <p class="flex items-center text-white-400">
                         <i class="fas fa-phone-alt mr-2"></i>
-                        <a href="tel" aria-label="Call us" class="hover:text-yellow-600 transition-colors duration-200">
+                        <a href="tel" aria-label="Call us" class="hover:text-yellow-400 transition duration-300">
                             <span data-translate="phone-one"></span>
                         </a>
                     </p>
-                    <p class="flex items-center ">
+                    <p class="flex items-center text-white-400">
                         <i class="fas fa-phone-alt mr-2"></i>
-                        <a href="tel" aria-label="Call us" class="hover:text-yellow-600 transition-colors duration-200">
+                        <a href="tel" aria-label="Call us" class="hover:text-yellow-400 transition duration-300">
                             <span data-translate="phone-two"></span>
                         </a>
                     </p>
-                    <p class="flex items-center ">
+                    <p class="flex items-center text-white-400">
                         <i class="fas fa-envelope mr-2"></i>
-                        <a href="mailto" aria-label="Email us"
-                            class="hover:text-yellow-600 transition-colors duration-200">
+                        <a href="mailto" aria-label="Email us" class="hover:text-yellow-400 transition duration-300">
                             <span data-translate="email"></span>
                         </a>
                     </p>
@@ -56,23 +67,23 @@
 
             <!-- Newsletter Section -->
             <div>
-                <h5 class="text-lg font-semibold mb-4" data-translate="footer.newsletter.title"></h5>
-                <p class="mb-2" data-translate="footer.newsletter.description"></p>
+                <h4 class="text-lg font-semibold mb-4" data-translate="footer.newsletter.title"></h4>
+                <p class="text-white-400 mb-4" data-translate="footer.newsletter.description"></p>
                 <form id="newsletterForm" class="flex">
                     <input id="emailNewsletter" type="email" placeholder="Your email"
                         aria-label="Enter your email address" required
-                        class="px-2 py-2 w-full focus:outline-none text-gray-800">
+                        class="px-4 py-2 rounded-l-lg focus:outline-none text-yellow-700 w-full">
                     <button id="newsletterSubmitBtn" type="submit"
-                        class="px-4 py-2">
+                        class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-r-lg transition duration-300">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
         </div>
 
-        <hr class="border-gray-700 my-6">
+        <hr class="border-white-700 my-6">
 
-        <div class="footer-bottom container mx-auto px-4 text-center py-4 text-gray-400">
+        <div class="footer-bottom container mx-auto px-4 text-center py-4 text-white-400">
             <p>&copy; <span data-translate="year"></span> <span data-translate="footer.rights-reserved"></span></p>
         </div>
     </div>

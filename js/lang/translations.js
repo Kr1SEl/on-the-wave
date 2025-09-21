@@ -146,11 +146,11 @@ export function injectContact() {
 export function injectTourData(id) {
     let tourTranslations = getSelectedTranslations(tourTranslationData, id);
 
-    document.getElementById('tour-hero').style.setProperty('--hero-url', `url('${tourTranslations["hero-image"]}')`);
-    document.getElementById('tour-description').innerHTML = tourTranslations.description;
+    document.getElementById('tourHero').style.setProperty('--hero-url', `url('${tourTranslations["hero-image"]}')`);
+    document.getElementById('tourDescription').innerHTML = tourTranslations.description;
 
     // Highlights
-    const highlightsContainer = document.getElementById('tour-highlights');
+    const highlightsContainer = document.getElementById('tourHighlights');
     tourTranslations.highlights.forEach(highlight => {
         const highlightElement = document.createElement('div');
         highlightElement.className = 'flex items-start';
@@ -162,7 +162,7 @@ export function injectTourData(id) {
     });
 
     // Itinerary
-    const itineraryContainer = document.getElementById('tour-itinerary');
+    const itineraryContainer = document.getElementById('tourItinerary');
     tourTranslations.itinerary.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'border-l-4 border-blue-500 pl-4 py-2';
@@ -175,7 +175,7 @@ export function injectTourData(id) {
     });
 
     // Gallery
-    const galleryContainer = document.getElementById('tour-gallery');
+    const galleryContainer = document.getElementById('tourGallery');
     tourTranslations.gallery.forEach(imageUrl => {
         const imageElement = document.createElement('div');
         imageElement.className = 'overflow-hidden rounded-lg shadow-md';
@@ -186,7 +186,7 @@ export function injectTourData(id) {
     });
 
     // Included/Excluded
-    const includedContainer = document.getElementById('tour-included');
+    const includedContainer = document.getElementById('tourIncluded');
     tourTranslations.included.forEach(item => {
         const li = document.createElement('li');
         li.className = 'flex items-start';
@@ -197,7 +197,7 @@ export function injectTourData(id) {
         includedContainer.appendChild(li);
     });
 
-    const excludedContainer = document.getElementById('tour-excluded');
+    const excludedContainer = document.getElementById('tourExcluded');
     tourTranslations.excluded.forEach(item => {
         const li = document.createElement('li');
         li.className = 'flex items-start';
@@ -212,7 +212,7 @@ export function injectTourData(id) {
 export function injectFaqTranslations() {
     let faqTranslations = getSelectedTranslations(commonTranslationData, "faq");
 
-    const faqContainer = document.getElementById('tour-faq');
+    const faqContainer = document.getElementById('tourFaq');
     faqTranslations.forEach(item => {
         const faqElement = document.createElement('div');
         faqElement.className = 'bg-white p-6 rounded-lg shadow-md';

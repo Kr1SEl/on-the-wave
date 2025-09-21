@@ -6,7 +6,7 @@ import { showAlert } from "./controllers/alertController.js";
 import { EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE } from "./config/conf.js";
 import { injectHeaderButtonsLogic, injectFooterButtonsLogic } from "./controllers/buttonsController.js";
 
-async function injectHeader(){
+async function injectHeader() {
     const headerContainer = document.getElementById('header');
     try {
         const response = await fetch('/on-the-wave/components/shared/header.html');
@@ -15,8 +15,8 @@ async function injectHeader(){
             injectNavbar();
             injectMobileMenu();
             injectHeaderButtonsLogic();
-            initLanguage('dropdown-menu', 'lang-menu-btn');
-            initLanguage('dropdown-menu-mobile', 'lang-menu-btn-mobile');
+            initLanguage('dropdownMenu', 'langMenuBtn');
+            initLanguage('dropdownMenuMobile', 'langMenuBtnMobile');
             applyTranslations();
         } else {
             console.error('Failed to load header:', response.statusText);
@@ -26,11 +26,11 @@ async function injectHeader(){
     }
 }
 
-export function injectNavbar(){
+export function injectNavbar() {
     const navbar = document.getElementById('navbar');
 
     window.addEventListener('scroll', () => {
-        if (navbar){
+        if (navbar) {
             if (window.scrollY > 10) {
                 navbar.classList.remove('navbar-transparent');
                 navbar.classList.add('navbar-solid');
@@ -42,10 +42,10 @@ export function injectNavbar(){
     });
 }
 
-export function injectMobileMenu(){
-    const menuToggler = document.getElementById("menu-toggler");
-    const overlayMenu = document.getElementById("overlay-menu");
-    const closeOverlay = document.getElementById("close-overlay");
+export function injectMobileMenu() {
+    const menuToggler = document.getElementById("menuToggler");
+    const overlayMenu = document.getElementById("overlayMenu");
+    const closeOverlay = document.getElementById("closeOverlay");
 
     menuToggler.addEventListener("click", () => {
         overlayMenu.classList.add("active");
@@ -62,7 +62,7 @@ export function injectMobileMenu(){
     });
 }
 
-async function injectFooter(){
+async function injectFooter() {
     const headerContainer = document.getElementById('footer');
     try {
         const response = await fetch('/on-the-wave/components/shared/footer.html')
@@ -80,9 +80,9 @@ async function injectFooter(){
     }
 }
 
-function injectFooterEmailLogic(){
+function injectFooterEmailLogic() {
     document.getElementById('newsletterForm').addEventListener('submit', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const emailInput = document.getElementById('emailNewsletter');
 

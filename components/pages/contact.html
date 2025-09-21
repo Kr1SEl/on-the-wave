@@ -1,73 +1,142 @@
-<section class="contact-header">
-    <div id="header-image" class="header-image">
-        <img src="/on-the-wave/resources/media/yacht/yacht_1.webp" alt="" role="presentation" class="img-fluid">
-        <div class="header-image-overlay">
-            <h1 class="text-center" id="page-title" data-translate="page-title"></h1>
-            <p class="text-center" id="page-subtitle" data-translate="page-subtitle"></p>
-        </div>
+<!-- Hero Section -->
+<section class="wave-bg text-white py-20 relative">
+    <div class="container mx-auto px-6 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Set Sail With Us</h1>
+        <p class="text-xl md:text-2xl mb-8">Contact our team to plan your perfect yachting adventure</p>
+        <a href="#contact-form"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get
+            in Touch</a>
     </div>
 </section>
 
-<div id="alert-container" class="container mt-4"></div>
+<div id="alertContainer" class="container mt-4"></div>
 
-<section class="contact-section">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="contact-box">
-                    <h2 class="text-primary" data-translate="write-to-us"></h2>
-                    <p data-translate="write-to-us-subtitle"></p>
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+<!-- Main Content -->
+<div class="container mx-auto px-6 py-16">
+    <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Contact Form -->
+        <div class="lg:w-1/2">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input id="name" type="text" name="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
                         </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input id="email" type="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input id="phone" type="tel" name="phone"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
+                    </div>
+                    <div>
+                        <label for="tour" class="block text-gray-700 font-medium mb-2">Interested Tour</label>
+                        <select id="tour" name="tour"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input">
+                            <option value="">Select a tour</option>
+                            <option value="Mediterranean Cruise">Mediterranean Cruise</option>
+                            <option value="Caribbean Adventure">Caribbean Adventure</option>
+                            <option value="Greek Islands Tour">Greek Islands Tour</option>
+                            <option value="Private Charter">Private Charter</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 form-input"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+                <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+                <div id="formError" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                    There was an error sending your message. Please try again later.
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="lg:w-1/2 space-y-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 contact-card">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
-                                required></textarea>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Our Office</h3>
+                            <p class="text-gray-600">Marina Bay, Yacht Club District<br>Monaco, 98000</p>
                         </div>
-                        <button type="submit" class="btn btn-custom" data-translate="send-message"></button>
-                    </form>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
+                            <p class="text-gray-600">+377 123 4567 (Office)<br>+377 987 6543 (24/7 Support)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                            <p class="text-gray-600">info@onthewaveyachting.com<br>bookings@onthewaveyachting.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Working Hours</h3>
+                            <p class="text-gray-600">Monday - Friday: 9:00 - 18:00<br>Saturday: 10:00 -
+                                16:00<br>Sunday: Closed</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <div class="contact-box">
-                    <h2 class="text-primary" data-translate="contacts"></h2>
-
-                    <div class="contact-card">
-                        <img src="https://flagcdn.com/w40/ua.png" alt="Ukraine">
-                        <p data-translate="phone-one"></p>
-                    </div>
-
-                    <div class="contact-card">
-                        <img src="https://flagcdn.com/w40/ua.png" alt="Ukraine">
-                        <p data-translate="phone-two"></p>
-                    </div>
-
-                    <div class="contact-card">
-                        <img src="https://flagcdn.com/w40/us.png" alt="USA">
-                        <p>+123456789</p>
-                    </div>
-
-                    <div class="contact-card">
-                        <img src="https://flagcdn.com/w40/pl.png" alt="PL">
-                        <p>+48123456789</p>
-                    </div>
-
-                    <h4 class="mt-4" data-translate="follow-us"></h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                    </div>
+            <div class="bg-white rounded-xl shadow-lg p-8 contact-card">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Find Us On Social Media</h2>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition duration-300">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
