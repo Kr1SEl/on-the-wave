@@ -64,6 +64,57 @@ export function injectParallaxButtonsLogic() {
     }
 }
 
+export function injectTourButtonLogic() {
+    const bookTourButton = document.getElementById("bookTourButton");
+    const checkAvailabilityButton = document.getElementById("checkAvailabilityButton");
+    const dateInput = document.getElementById("date");
+
+    // Force calendar input to be in future 
+    if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+    }
+
+    if (bookTourButton) {
+        const tourTitle = document.getElementById("tourTitle").innerText;
+        const message = `Hello, I'm interested in the tour "${tourTitle}". Please contact me back with additional details.`;
+        bookTourButton.removeEventListener("click", () => loadPage("contact", message));
+        bookTourButton.addEventListener("click", () => loadPage("contact", message));
+    }
+
+    if (checkAvailabilityButton) {
+        checkAvailabilityButton.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const tourTitle = document.getElementById("tourTitle").innerText;
+            const dateValue = document.getElementById("date")?.value;
+            const guests = document.getElementById("guests")?.value;
+
+            let formattedDate = "";
+            if (dateValue) {
+                const dateObj = new Date(dateValue);
+                formattedDate = dateObj.toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                });
+            }
+
+            let message = `Hello, I’d like to check the availability of the "${tourTitle}" tour`;
+
+            if (formattedDate) message += ` on ${formattedDate}`;
+            if (guests) message += ` for ${guests} guest${guests > 1 ? "s" : ""}`;
+
+            message += `. Could you please confirm availability and provide more details? Thank you!`;
+
+            loadPage("contact", message);
+        });
+    }
+}
+
 export function injectFooterButtonsLogic() {
     const galleryButton = document.getElementById("footerGalleryButton");
     const contactButton = document.getElementById("footerContactButton");

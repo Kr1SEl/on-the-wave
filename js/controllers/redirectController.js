@@ -5,7 +5,7 @@ import { loadTourPage } from "../pages/tour.js";
 
 let lastScrollTarget = null;
 
-export async function loadPage(page, id = null) {
+export async function loadPage(page, params = null) {
     const pageMappings = {
         "gallery": {
             url: "/on-the-wave/components/pages/home.html",
@@ -26,7 +26,7 @@ export async function loadPage(page, id = null) {
         "blog-post": {
             url: "/on-the-wave/components/pages/blog-post.html",
             callback: () => {
-                loadBlogPage(id).then(() => {
+                loadBlogPage(params).then(() => {
                     scrollToTop();
                 });
             }
@@ -34,7 +34,7 @@ export async function loadPage(page, id = null) {
         "contact": {
             url: "/on-the-wave/components/pages/contact.html",
             callback: () => {
-                loadContactPage().then(() => {
+                loadContactPage(params).then(() => {
                     scrollToTop();
                 });
             },
@@ -50,7 +50,7 @@ export async function loadPage(page, id = null) {
         "tour": {
             url: "/on-the-wave/components/pages/tour.html",
             callback: () => {
-                loadTourPage(id).then(() => {
+                loadTourPage(params).then(() => {
                     scrollToTop();
                 });
             }
@@ -74,7 +74,7 @@ export async function loadPage(page, id = null) {
             if (mapping.callback) {
                 mapping.callback();
             }
-            history.pushState({}, "", `#${page}${id ? `?id=${id}` : ""}`);
+            history.pushState({}, "", `#${page}${params ? `?id=${params}` : ""}`);
         } else {
             console.error('Failed to load page:', response.statusText);
         }

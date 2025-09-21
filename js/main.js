@@ -102,9 +102,12 @@ function injectFooterEmailLogic() {
 
         const emailInput = document.getElementById('emailNewsletter');
 
-        emailjs.send(EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE, {
+        const formData = {
             email: emailInput.value,
-        }).then(
+            text: "User subscribed to the OTW newsletter!"
+        };
+
+        emailjs.send(EMAILJS_NEWSLETTER_SERVICE, EMAILJS_NEWSLETTER_TEMPLATE, formData).then(
             function (response) {
                 showAlert('Thank you for subscribing!', 'success');
                 emailInput.value = '';

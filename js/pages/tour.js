@@ -1,5 +1,6 @@
 import { applyTranslations, injectTourData, injectFaqTranslations } from "../lang/translations.js";
 import { injectParallax } from "../main.js"
+import { injectTourButtonLogic } from "../controllers/buttonsController.js"
 
 export function loadTourPage(id) {
     return new Promise((resolve) => {
@@ -7,6 +8,7 @@ export function loadTourPage(id) {
         injectTourData(id);
         injectFAQ();
         injectParallax();
+        injectTourButtonLogic();
         resolve();
     });
 }
