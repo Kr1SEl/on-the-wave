@@ -1,12 +1,20 @@
 import { loadHomePage } from "../pages/home.js";
 import { loadContactPage } from "../pages/contact.js";
 import { loadBlogPage } from "../pages/blogPost.js"
-import { loadTourPage } from "../pages/tour.js";
+import { loadTourPage, loadAllToursPage } from "../pages/tour.js";
 
 let lastScrollTarget = null;
 
 export async function loadPage(page, params = null) {
     const pageMappings = {
+        "home": {
+            url: "/on-the-wave/components/pages/home.html",
+            callback: () => {
+                loadHomePage().then(() => {
+                    scrollToTop();
+                });
+            },
+        },
         "gallery": {
             url: "/on-the-wave/components/pages/home.html",
             callback: () => {
@@ -40,10 +48,10 @@ export async function loadPage(page, params = null) {
             },
         },
         "tours": {
-            url: "/on-the-wave/components/pages/home.html",
+            url: "/on-the-wave/components/pages/tours.html",
             callback: () => {
-                loadHomePage().then(() => {
-                    scrollToSection("toursSection");
+                loadAllToursPage().then(() => {
+                    scrollToTop();
                 });
             },
         },

@@ -14,6 +14,14 @@ export function loadTourPage(id) {
     });
 }
 
+export function loadAllToursPage() {
+    return new Promise((resolve) => {
+        applyTranslations("tours");
+        injectParallax();
+        resolve();
+    });
+}
+
 async function injectFAQ() {
     const headerContainer = document.getElementById('faq');
     try {

@@ -1,8 +1,14 @@
 export function injectHeaderButtonsLogic() {
+    const homeButton = document.querySelectorAll(".headerHomeButton");
     const galleryButton = document.querySelectorAll(".headerGalleryButton");
     const contactButton = document.querySelectorAll(".headerContactButton");
     const blogButton = document.querySelectorAll(".headerBlogButton");
     const toursButton = document.querySelectorAll(".headerToursButton");
+
+    if (homeButton) {
+        homeButton.forEach(btn => btn.removeEventListener("click", () => loadPage("home")));
+        homeButton.forEach(btn => btn.addEventListener("click", () => loadPage("home")));
+    }
 
     if (galleryButton) {
         galleryButton.forEach(btn => btn.removeEventListener("click", () => loadPage("gallery")));
@@ -116,10 +122,16 @@ export function injectTourButtonLogic() {
 }
 
 export function injectFooterButtonsLogic() {
+    const homeButton = document.getElementById("footerHomeButton");
     const galleryButton = document.getElementById("footerGalleryButton");
     const contactButton = document.getElementById("footerContactButton");
     const blogButton = document.getElementById("footerBlogButton");
     const toursButton = document.getElementById("footerToursButton");
+
+    if (homeButton) {
+        homeButton.removeEventListener("click", () => loadPage("home"));
+        homeButton.addEventListener("click", () => loadPage("home"));
+    }
 
     if (galleryButton) {
         galleryButton.removeEventListener("click", () => loadPage("gallery"));

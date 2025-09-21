@@ -5,6 +5,7 @@ export const english = {
         "common": {
             "company.title": "OnTheWave",
             "nav.gallery": "Gallery",
+            "nav.home": "Home",
             "nav.blog": "Blog",
             "nav.contact": "Contact",
             "nav.tours": "Tours",
@@ -97,20 +98,24 @@ export const english = {
             }
         },
         "tours": {
-            "tour-1": {
-                "id": "greece"
-            },
-            "tour-2": {
-                "id": "greece"
-            },
-            "tour-3": {
-                "id": "greece"
-            },
-            "tour-4": {
-                "id": "greece"
-            },
-            "tour-5": {
-                "id": "greece"
+            "page-title": "All Yachting Tours",
+            "page-subtitle": "Explore our complete collection of luxury sailing experiences",
+            "highlights": {
+                "tour-1": {
+                    "id": "greece"
+                },
+                "tour-2": {
+                    "id": "greece"
+                },
+                "tour-3": {
+                    "id": "greece"
+                },
+                "tour-4": {
+                    "id": "greece"
+                },
+                "tour-5": {
+                    "id": "greece"
+                }
             }
         },
         "contact": {

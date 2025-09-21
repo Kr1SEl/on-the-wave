@@ -6,7 +6,7 @@ const prefLang = localStorage['prefLang'];
 let prevChunksize = 0;
 
 function createCarousel(chunkSize) {
-    const tours = translationData[prefLang]["tours"];
+    const tours = translationData[prefLang]["tours"]["highlights"];
     const carouselContent = document.getElementById("carouselContent");
     carouselContent.innerHTML = "";
 
@@ -32,7 +32,7 @@ function createCarousel(chunkSize) {
                     <div class="card-body">
                         <h5 class="card-title">${tourData.title}</h5>
                         <p class="card-text">${tourData.price}</p>
-                        <button id="tourPage${tour["id"]}" class="btn btn-primary">View Tour</button>
+                        <button id="tourPage${tour["id"]}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-md transition duration-300">View Tour</button>
                     </div>
                 </div>
             `;
