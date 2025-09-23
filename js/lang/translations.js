@@ -50,7 +50,7 @@ for (let key in tourCommonTranslationTexts) {
     tourTranslationCommon[key] = tourCommonTranslationTexts[key]
 }
 
-function getPrefLang() {
+export function getPrefLang() {
     return localStorage.getItem("prefLang") || "en-GB";
 }
 
@@ -64,6 +64,23 @@ function getSelectedTranslations(translations, id = null) {
         return translations[prefLang][id];
     }
     return translations[prefLang];
+}
+
+export function buildContactMessage(type, { tourTitle, formattedDate, guests }) {
+    const lang = getPrefLang();
+
+    const messages = {
+        "en-GB": {
+            book: `Hello, I'm interested in the tour "${tourTitle}". Please contact me back with additional details.`,
+            check: `Hello, I’d like to check the availability of the "${tourTitle}" tour${formattedDate ? ` on ${formattedDate}` : ""}${guests ? ` for ${guests} guest${guests > 1 ? "s" : ""}` : ""}. Could you please confirm availability and provide more details? Thank you!`
+        },
+        "uk-UA": {
+            book: `Вітаю! Мене цікавить тур «${tourTitle}». Будь ласка, зв’яжіться зі мною для отримання додаткової інформації.`,
+            check: `Вітаю! Я хотів(ла) би дізнатися про доступність туру «${tourTitle}»${formattedDate ? ` на ${formattedDate}` : ""}${guests ? ` для ${guests} учасник${guests > 1 ? "ів" : ""}` : ""}. Чи могли б ви підтвердити доступність і надати більше деталей? Дякую!`
+        }
+    };
+
+    return messages[lang]?.[type] || messages["en-GB"][type];
 }
 
 export function getTourData(id) {
@@ -187,7 +204,7 @@ export function injectAllToursData() {
                 </div>
                 <div class="flex justify-between items-center">
                     <span class="text-xl font-bold text-blue-600">${tour.price}</span>
-                    <button id="tourPage${tour["id"]}" 
+                    <button id="tourPage${key}" 
                                 class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 inline-flex items-center">
                                 View Tour <i class="ml-2 fas fa-arrow-right"></i>
                     </button>

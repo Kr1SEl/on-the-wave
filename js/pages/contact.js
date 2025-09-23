@@ -11,9 +11,9 @@ function injectCountryCodeSelection() {
             fetch("https://ipapi.co/json")
                 .then(res => res.json())
                 .then(data => callback(data.country_code))
-                .catch(() => callback("us")); // fallback
+                .catch(() => callback("us"));
         },
-        separateDialCode: true, // shows country code separately
+        separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js", // formatting/validation
     });
 }

@@ -1,3 +1,5 @@
+import { getPrefLang, buildContactMessage } from "../lang/translations.js"
+
 export function injectHeaderButtonsLogic() {
     const brandButton = document.getElementById("brand-home-btn");
     const homeButton = document.querySelectorAll(".headerHomeButton");
@@ -40,7 +42,6 @@ export function injectHeaderButtonsLogic() {
 export function injectHomepageButtonsLogic() {
     const contactButton = document.getElementById("contactButton");
     const blogPostButtons = document.querySelectorAll('[id^="blogPost"]');
-    const toursButtons = document.querySelectorAll('[id^="tourPage"]');
 
     if (contactButton) {
         contactButton.removeEventListener("click", () => loadPage("contact"));
@@ -56,6 +57,10 @@ export function injectHomepageButtonsLogic() {
             loadPage("blog-post", blogId);
         }, { once: true });
     });
+}
+
+export function injectTourNavigationButtonLogic() {
+    const toursButtons = document.querySelectorAll('[id^="tourPage"]');
 
     toursButtons.forEach(button => {
         button.addEventListener("click", function (event) {
@@ -91,10 +96,11 @@ export function injectTourButtonLogic() {
     }
 
     if (bookTourButton) {
-        const tourTitle = document.getElementById("tourTitle").innerText;
-        const message = `Hello, I'm interested in the tour "${tourTitle}". Please contact me back with additional details.`;
-        bookTourButton.removeEventListener("click", () => loadPage("contact", message));
-        bookTourButton.addEventListener("click", () => loadPage("contact", message));
+        bookTourButton.addEventListener("click", () => {
+            const tourTitle = document.getElementById("tourTitle").innerText;
+            const message = buildContactMessage("book", { tourTitle });
+            loadPage("contact", message);
+        });
     }
 
     if (checkAvailabilityButton) {
@@ -108,20 +114,14 @@ export function injectTourButtonLogic() {
             let formattedDate = "";
             if (dateValue) {
                 const dateObj = new Date(dateValue);
-                formattedDate = dateObj.toLocaleDateString(undefined, {
+                formattedDate = dateObj.toLocaleDateString(getPrefLang(), {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
                 });
             }
 
-            let message = `Hello, I’d like to check the availability of the "${tourTitle}" tour`;
-
-            if (formattedDate) message += ` on ${formattedDate}`;
-            if (guests) message += ` for ${guests} guest${guests > 1 ? "s" : ""}`;
-
-            message += `. Could you please confirm availability and provide more details? Thank you!`;
-
+            const message = buildContactMessage("check", { tourTitle, formattedDate, guests });
             loadPage("contact", message);
         });
     }
