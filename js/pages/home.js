@@ -1,5 +1,5 @@
 import { applyTranslations, getTourData, translationData } from "../lang/translations.js";
-import { injectHomepageButtonsLogic } from "../controllers/buttonsController.js";
+import { injectHomepageButtonsLogic, injectTourNavigationButtonLogic } from "../controllers/buttonsController.js";
 import { injectParallax } from "../main.js"
 
 const prefLang = localStorage['prefLang'];
@@ -123,6 +123,7 @@ export function loadHomePage() {
         resizeCarousel();
         injectParallax();
         injectHomepageButtonsLogic();
+        injectTourNavigationButtonLogic();
 
         window.removeEventListener("resize", resizeCarousel);
         window.addEventListener("resize", resizeCarousel);

@@ -9,7 +9,6 @@ export function loadTourPage(id) {
         injectIncludedExcluded();
         injectFAQ();
         injectTourButtonLogic();
-        injectTourNavigationButtonLogic();
         injectParallax();
         resolve();
     });
