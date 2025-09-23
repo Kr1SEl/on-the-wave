@@ -58,9 +58,12 @@ function mergeTranslations(obj1, obj2) {
     return Object.assign({}, obj1, obj2);
 };
 
-function getSelectedTranslations(translations, id) {
+function getSelectedTranslations(translations, id = null) {
     const prefLang = getPrefLang();
-    return translations[prefLang][id];
+    if (id) {
+        return translations[prefLang][id];
+    }
+    return translations[prefLang];
 }
 
 export function getTourData(id) {
@@ -144,8 +147,59 @@ export function injectContact() {
     email.href = `mailto:${contactTranslations["email"]}`;
 }
 
+export function injectAllToursData() {
+    let tours = getSelectedTranslations(tourTranslationData);
+    const container = document.getElementById("tourGrid");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    Object.keys(tours).forEach((key, index) => {
+        const tour = tours[key];
+
+        const card = document.createElement("div");
+        card.className =
+            "tour-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300";
+        card.setAttribute("data-aos", "fade-up");
+        card.setAttribute("data-aos-delay", `${100 * (index + 1)}`);
+
+        card.innerHTML = `
+            <div class="h-48 overflow-hidden">
+                <img src="${tour["hero-image"]}" alt="${tour.title}" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">${tour.title}</h3>
+                    <span class="bg-${tour.badgeColor}-100 text-${tour.badgeColor}-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                        ${tour.badgeName}
+                    </span>
+                </div>
+                <p class="text-gray-600 mb-4">${tour.subtitle}</p>
+                <div class="flex items-center text-gray-500 mb-4 space-x-6">
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2"></i>
+                        <span class="text-sm">${tour.duration}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        <span class="text-sm">${tour["group-size"]}</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-blue-600">${tour.price}</span>
+                    <button id="tourPage${tour["id"]}" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 inline-flex items-center">
+                                View Tour <i class="ml-2 fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
 export function injectTourData(id) {
-    let tourTranslations = getSelectedTranslations(tourTranslationData, id);
+    let tourTranslations = getTourData(id);
 
     document.getElementById('tourHero').style.setProperty('--hero-url', `url('${tourTranslations["hero-image"]}')`);
     document.getElementById('tourDescription').innerHTML = tourTranslations.description;

@@ -48,7 +48,7 @@ export async function loadPage(page, params = null) {
             },
         },
         "tours": {
-            url: "/on-the-wave/components/pages/tours.html",
+            url: "/on-the-wave/components/pages/allTours.html",
             callback: () => {
                 loadAllToursPage().then(() => {
                     scrollToTop();

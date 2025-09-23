@@ -27,12 +27,33 @@ function createCarousel(chunkSize) {
             const tourData = getTourData(tour.id)
 
             const card = `
-                <div class="card destination-card mx-2 my-3">
-                    <img src="${tourData["hero-image"]}" class="card-img-top" alt="${tourData.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${tourData.title}</h5>
-                        <p class="card-text">${tourData.price}</p>
-                        <button id="tourPage${tour["id"]}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-md transition duration-300">View Tour</button>
+                <div class="card destination-card mx-2 my-3 shadow-md rounded-lg overflow-hidden">
+                    <img src="${tourData["hero-image"]}" class="card-img-top w-full h-48 object-cover" alt="${tourData.title}">
+                    <div class="card-body p-4 flex flex-col justify-between h-full">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">${tourData.title}</h3>
+                            <span class="ml-4 bg-${tourData.badgeColor}-100 text-${tourData.badgeColor}-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                ${tourData.badgeName}
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-4">${tourData.subtitle || ""}</p>
+                        <div class="flex items-center text-gray-500 mb-4 space-x-6">
+                            <div class="flex items-center">
+                                <i class="far fa-clock mr-2"></i>
+                                <span class="text-sm">${tourData.duration}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span class="text-sm">${tourData["group-size"]}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-blue-600">${tourData.price}</span>
+                            <button id="tourPage${tour["id"]}" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 inline-flex items-center">
+                                View Tour <i class="ml-2 fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;

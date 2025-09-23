@@ -1,9 +1,15 @@
 export function injectHeaderButtonsLogic() {
+    const brandButton = document.getElementById("brand-home-btn");
     const homeButton = document.querySelectorAll(".headerHomeButton");
     const galleryButton = document.querySelectorAll(".headerGalleryButton");
     const contactButton = document.querySelectorAll(".headerContactButton");
     const blogButton = document.querySelectorAll(".headerBlogButton");
     const toursButton = document.querySelectorAll(".headerToursButton");
+
+    if (brandButton) {
+        brandButton.removeEventListener("click", () => loadPage("home"));
+        brandButton.addEventListener("click", () => loadPage("home"));
+    }
 
     if (homeButton) {
         homeButton.forEach(btn => btn.removeEventListener("click", () => loadPage("home")));

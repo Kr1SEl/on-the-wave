@@ -105,17 +105,14 @@ export const english = {
                     "id": "greece"
                 },
                 "tour-2": {
-                    "id": "greece"
+                    "id": "croatia"
                 },
                 "tour-3": {
-                    "id": "greece"
+                    "id": "caribbean"
                 },
                 "tour-4": {
-                    "id": "greece"
+                    "id": "volcano"
                 },
-                "tour-5": {
-                    "id": "greece"
-                }
             }
         },
         "contact": {

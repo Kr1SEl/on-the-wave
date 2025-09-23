@@ -1,4 +1,4 @@
-import { applyTranslations, injectTourData, injectFaqTranslations, injectIncludedExcluded } from "../lang/translations.js";
+import { applyTranslations, injectTourData, injectFaqTranslations, injectIncludedExcluded, injectAllToursData } from "../lang/translations.js";
 import { injectParallax } from "../main.js"
 import { injectTourButtonLogic } from "../controllers/buttonsController.js"
 
@@ -17,6 +17,7 @@ export function loadTourPage(id) {
 export function loadAllToursPage() {
     return new Promise((resolve) => {
         applyTranslations("tours");
+        injectAllToursData();
         injectParallax();
         resolve();
     });

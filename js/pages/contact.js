@@ -2,6 +2,22 @@ import { applyTranslations, injectContact } from "../lang/translations.js";
 import { showAlert } from "../controllers/alertController.js";
 import { EMAILJS_NEWSLETTER_SERVICE, EMAILJS_AUTO_REPLY_TEMPLATE, EMAILJS_NEWSLETTER_TEMPLATE } from "../config/conf.js";
 
+function injectCountryCodeSelection() {
+    const phoneInput = document.querySelector("#phone");
+    window.intlTelInput(phoneInput, {
+        initialCountry: "auto",
+        preferredCountries: ["ua", "us", "gb"],
+        geoIpLookup: callback => {
+            fetch("https://ipapi.co/json")
+                .then(res => res.json())
+                .then(data => callback(data.country_code))
+                .catch(() => callback("us")); // fallback
+        },
+        separateDialCode: true, // shows country code separately
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js", // formatting/validation
+    });
+}
+
 function injectContactFormLogic() {
     const contactForm = document.getElementById("contactForm")
     contactForm.removeEventListener("submit", submitForm);
@@ -52,6 +68,7 @@ export function loadContactPage(message = null) {
         injectContact();
         injectContactFormLogic();
         injectContactFormMessage(message);
+        injectCountryCodeSelection();
         resolve();
     });
 }
