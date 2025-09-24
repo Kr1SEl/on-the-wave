@@ -26,3 +26,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@supports (-webkit-touch-callout: none) {
+    .parallax {
+        background-attachment: scroll !important;
+    }
+}

@@ -67,6 +67,15 @@ export async function injectParallax() {
         const response = await fetch('/on-the-wave/components/shared/parallax.html')
         if (response.ok) {
             parallaxContainer.innerHTML = await response.text();
+            // document.addEventListener("DOMContentLoaded", function () {
+            //     var rellax = new Rellax('.rellax', {
+            //         center: true,  // center the parallax effect for mobile
+            //         wrapper: null, // use default wrapper
+            //         round: true,   // round pixel values
+            //         vertical: true
+            //     });
+            // });
+
             injectParallaxButtonsLogic();
             applyTranslations();
         } else {
