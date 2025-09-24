@@ -38,7 +38,7 @@ export const ukrainian = {
             "fact-two-subtitle": "Високо оцінено нашими щасливими мандрівниками",
             "fact-three-title": "Рейтинг 4.9",
             "fact-three-subtitle": "Найкращі враження в кожному турі",
-            "highlights": "Особливості",
+            "highlights": "Особливі моменти",
             "destinations": "Напрямки",
             "all-tours-btn": "Переглянути всі тури",
             "find-more-gallery-btn": "Більше у галереї!",
