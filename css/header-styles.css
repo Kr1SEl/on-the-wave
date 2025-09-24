@@ -33,8 +33,16 @@
     cursor: pointer;
 }
 
-.dropdown-item:hover {
-    background-color: var(--primary-accent);
+@media (min-width: 992px) {
+    .dropdown-item:hover {
+        background-color: var(--primary-accent);
+    }
+}
+
+@media (max-width: 992px) {
+    .dropdown-item:hover {
+        background-color: var(--secondary-color);
+    }
 }
 
 /* Mobile Nav */
