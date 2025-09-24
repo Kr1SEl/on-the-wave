@@ -1,6 +1,6 @@
 import { applyTranslations, getTourData, translationData } from "../lang/translations.js";
 import { injectHomepageButtonsLogic, injectTourNavigationButtonLogic } from "../controllers/buttonsController.js";
-import { injectParallax } from "../main.js"
+import { injectParallax } from "./common.js"
 
 const prefLang = localStorage['prefLang'];
 let prevChunksize = 0;

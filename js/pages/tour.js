@@ -1,5 +1,5 @@
 import { applyTranslations, injectTourData, injectFaqTranslations, injectIncludedExcluded, injectAllToursData } from "../lang/translations.js";
-import { injectParallax } from "../main.js"
+import { injectParallax } from "./common.js"
 import { injectTourButtonLogic, injectTourNavigationButtonLogic } from "../controllers/buttonsController.js"
 
 export function loadTourPage(id) {

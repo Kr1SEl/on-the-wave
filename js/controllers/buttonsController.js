@@ -1,11 +1,45 @@
 import { getPrefLang, buildContactMessage } from "../lang/translations.js"
 
-export function injectHeaderButtonsLogic() {
+function closeMobileNavBar() {
+    const overlayMenu = document.getElementById("overlayMenu");
+
+    if (overlayMenu) {
+        overlayMenu.classList.remove("active");
+    }
+}
+
+export function injectNavbarButtonsLogic() {
+    // Mobile buttons logic
+    const menuToggler = document.getElementById("menuToggler");
+    const overlayMenu = document.getElementById("overlayMenu");
+    const closeOverlay = document.getElementById("closeOverlay");
+
+    if (menuToggler) {
+        menuToggler.addEventListener("click", () => {
+            overlayMenu.classList.add("active");
+        });
+    }
+
+    if (closeOverlay) {
+        closeOverlay.addEventListener("click", () => {
+            overlayMenu.classList.remove("active");
+        });
+    }
+
+    if (overlayMenu) {
+        overlayMenu.addEventListener("click", (event) => {
+            if (event.target === overlayMenu) {
+                overlayMenu.classList.remove("active");
+            }
+        });
+    }
+
+    // Desktop + mobile buttons logic
     const brandButton = document.getElementById("brand-home-btn");
     const homeButton = document.querySelectorAll(".headerHomeButton");
-    const galleryButton = document.querySelectorAll(".headerGalleryButton");
+    // const galleryButton = document.querySelectorAll(".headerGalleryButton");
     const contactButton = document.querySelectorAll(".headerContactButton");
-    const blogButton = document.querySelectorAll(".headerBlogButton");
+    // const blogButton = document.querySelectorAll(".headerBlogButton");
     const toursButton = document.querySelectorAll(".headerToursButton");
 
     if (brandButton) {
@@ -14,38 +48,44 @@ export function injectHeaderButtonsLogic() {
     }
 
     if (homeButton) {
-        homeButton.forEach(btn => btn.removeEventListener("click", () => loadPage("home")));
-        homeButton.forEach(btn => btn.addEventListener("click", () => loadPage("home")));
+        homeButton.forEach(btn => btn.removeEventListener("click", () => { closeMobileNavBar(); loadPage("home"); }));
+        homeButton.forEach(btn => btn.addEventListener("click", () => { closeMobileNavBar(); loadPage("home"); }));
     }
 
-    if (galleryButton) {
-        galleryButton.forEach(btn => btn.removeEventListener("click", () => loadPage("gallery")));
-        galleryButton.forEach(btn => btn.addEventListener("click", () => loadPage("gallery")));
-    }
+    // if (galleryButton) {
+    //     galleryButton.forEach(btn => btn.removeEventListener("click", () => loadPage("gallery")));
+    //     galleryButton.forEach(btn => btn.addEventListener("click", () => loadPage("gallery")));
+    // }
 
     if (contactButton) {
-        contactButton.forEach(btn => btn.removeEventListener("click", () => loadPage("contact")));
-        contactButton.forEach(btn => btn.addEventListener("click", () => loadPage("contact")));
+        contactButton.forEach(btn => btn.removeEventListener("click", () => { closeMobileNavBar(); loadPage("contact") }));
+        contactButton.forEach(btn => btn.addEventListener("click", () => { closeMobileNavBar(); loadPage("contact") }));
     }
 
-    if (blogButton) {
-        blogButton.forEach(btn => btn.removeEventListener("click", () => loadPage("blog")));
-        blogButton.forEach(btn => btn.addEventListener("click", () => loadPage("blog")));
-    }
+    // if (blogButton) {
+    //     blogButton.forEach(btn => btn.removeEventListener("click", () => loadPage("blog")));
+    //     blogButton.forEach(btn => btn.addEventListener("click", () => loadPage("blog")));
+    // }
 
     if (toursButton) {
-        toursButton.forEach(btn => btn.removeEventListener("click", () => loadPage("tours")));
-        toursButton.forEach(btn => btn.addEventListener("click", () => loadPage("tours")));
+        toursButton.forEach(btn => btn.removeEventListener("click", () => { closeMobileNavBar(); loadPage("tours") }));
+        toursButton.forEach(btn => btn.addEventListener("click", () => { closeMobileNavBar(); loadPage("tours") }));
     }
 }
 
 export function injectHomepageButtonsLogic() {
     const contactButton = document.getElementById("contactButton");
+    const allToursButton = document.getElementById("allToursButton");
     const blogPostButtons = document.querySelectorAll('[id^="blogPost"]');
 
     if (contactButton) {
         contactButton.removeEventListener("click", () => loadPage("contact"));
         contactButton.addEventListener("click", () => loadPage("contact"));
+    }
+
+    if (allToursButton) {
+        allToursButton.removeEventListener("click", () => loadPage("tours"));
+        allToursButton.addEventListener("click", () => loadPage("tours"));
     }
 
     blogPostButtons.forEach(button => {
