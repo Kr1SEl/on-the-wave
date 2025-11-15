@@ -1,0 +1,112 @@
+<!-- Desktop Navbar -->
+<nav id="navbar"
+    class="bg-sky-800 text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent min-h-20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <!-- Logo/Brand -->
+        <button id="brand-home-btn" class="flex-shrink-0 flex items-center">
+            <img src="/on-the-wave/resources/media/logo-notext.webp" alt="Logo" role="presentation" width="50"
+                height="50">
+            <span class="ml-2 text-2xl font-bold text-white nav-title" data-translate="company.title"></span>
+        </button>
+
+        <!-- Menu Toggler -->
+        <button id="menuToggler"
+            class="lg:hidden p-2 rounded-md bg-yellow-600 hover:bg-yellow-700 transition duration-300" type="button"
+            aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <div id="navbarNav" class="hidden lg:flex items-center space-x-8">
+            <ul class="flex space-x-6">
+                <!-- <li>
+                    <button id="headerGalleryButtonDesktop"
+                        class="headerGalleryButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.gallery"></button>
+                </li> -->
+                <li>
+                    <button id="headerHomeButtonDesktop"
+                        class="headerHomeButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.home"></button>
+                </li>
+                <!-- <li>
+                    <button id="headerBlogButtonDesktop"
+                        class="headerBlogButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.blog"></button>
+                </li> -->
+                <li>
+                    <button id="headerContactButtonDesktop"
+                        class="headerContactButton py-2 text-lg text-white-400 hover:text-yellow-400 transition duration-300"
+                        data-translate="nav.contact"></button>
+                </li>
+                <li>
+                    <button id="headerToursButtonDesktop"
+                        class="headerToursButton relative group overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <span class="relative z-10" data-translate="nav.tours"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+                        <span
+                            class="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-4/5 group-hover:left-1/10 transition-all duration-300 rounded-full"></span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Language Dropdown -->
+            <div class="relative">
+                <button id="langMenuBtn" type="button" data-bs-toggle="dropdown"
+                    class="bg-white bg-opacity-10 border border-white border-opacity-20 text-white px-3 py-1 rounded hover:bg-opacity-20 transition-colors ml-2">
+                    🌐 Language
+                </button>
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <!-- JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="overlayMenu" class="overlay-menu space-y-2">
+    <button id="closeOverlay"
+        class="absolute top-5 right-8 text-4xl text-yellow-300 hover:text-yellow-400">&times;</button>
+    <!-- Menu Buttons -->
+    <ul class="flex flex-col items-center space-y-4">
+        <!-- <li><button id="headerGalleryButtonMobile"
+                class="headerGalleryButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.gallery"></button>
+        </li> -->
+        <li><button id="headerHomeButtonMobile" class="headerHomeButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.home"></button></li>
+        <!-- <li><button id="headerBlogButtonMobile" class="headerBlogButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.blog"></button></li> -->
+        <li><button id="headerContactButtonMobile"
+                class="headerContactButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.contact"></button></li>
+        <li><button id="headerToursButtonMobile"
+                class="headerToursButton text-2xl text-yellow-300 hover:text-yellow-400"
+                data-translate="nav.tours"></button></li>
+    </ul>
+    <!-- Social Buttons -->
+    <div class="flex justify-center gap-4 !mt-6">
+        <a href="https://www.facebook.com/share/14DhxxfQuHg/?mibextid=wwXIfr" aria-label="Facebook"
+            class="text-2xl text-yellow-300 hover:text-yellow-400" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/onthewaveyachting/" aria-label="Instagram"
+            class="text-2xl text-yellow-300 hover:text-yellow-400" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
+        <a href="https://t.me/+UJVC01DzEiStD15a" aria-label="Telegram"
+            class="text-2xl text-yellow-300 hover:text-yellow-400" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-telegram"></i></a>
+    </div>
+    <!-- Language Dropdown -->
+    <div class="dropdown !mt-6">
+        <button id="langMenuBtnMobile" type="button"
+            class="bg-white bg-opacity-10 border border-white border-opacity-20 text-white px-3 py-1 rounded hover:bg-opacity-20 transition-colors ml-2"
+            data-bs-toggle="dropdown" tabindex="3">
+            🌐 Language
+        </button>
+        <div id="dropdownMenuMobile" class="dropdown-menu">
+            <!--JS -->
+        </div>
+    </div>
+</div>

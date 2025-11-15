@@ -1,0 +1,142 @@
+<!-- Hero Section -->
+<div id="tourHero" class="hero-image min-h-[60vh] flex items-center justify-center text-white">
+    <div class="text-center px-4">
+        <h1 id="tourTitle" class="text-4xl md:text-5xl font-bold mb-4" data-translate="title"></h1>
+        <p id="tourSubtitle" class="text-xl md:text-2xl mb-6" data-translate="subtitle"></p>
+        <button id="bookTourButton"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300"
+            data-translate="book-title"></button>
+    </div>
+</div>
+
+<div id="alertContainer" class="container mt-4"></div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Main Content -->
+        <div class="lg:w-2/3">
+            <!-- Highlights -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="highlights-title"></h2>
+                <div id="tourHighlights" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!--JS -->
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="description-title"></h2>
+                <div id="tourDescription" class="prose max-w-none text-gray-700">
+                    <!-- Will be populated by JS -->
+                </div>
+            </div>
+
+            <!-- Itinerary -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="itinerary-title"></h2>
+                <div id="tourItinerary" class="space-y-6">
+                    <!--JS -->
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6" data-translate="gallery-title"></h2>
+                <div id="tourGallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!--JS -->
+                </div>
+            </div>
+
+            <!-- Included/Excluded -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="included-title"></h2>
+                    <ul id="tourIncluded" class="space-y-2 text-gray-700">
+                        <!--JS -->
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="excluded-title"></h2>
+                    <ul id="tourExcluded" class="space-y-2 text-gray-700">
+                        <!--JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Widget -->
+        <div class="lg:w-1/3">
+            <div id="booking" class="sticky-booking bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" data-translate="book-title"></h2>
+
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-700" data-translate="from-title"></span>
+                        <span id="tourPrice" class="text-2xl font-bold text-blue-600" data-translate="price"></span>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-4" data-translate="per-person-title"></div>
+                    <div class="flex items-center text-sm text-gray-600 mb-2">
+                        <i class="far fa-clock mr-2"></i>
+                        <span id="tourDuration" data-translate="duration"></span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-users mr-2"></i>
+                        <span id="tourGroupSize" data-translate="group-size"></span>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-1"
+                            data-translate="select-date-title"></label>
+                        <input id="date" type="date" name="date"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-gray-700 mb-1"
+                            data-translate="number-of-guests-title"></label>
+                        <select id="guests" name="guests"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <option value="1" data-translate="1-guest"></option>
+                            <option value="2" data-translate="2-guest"></option>
+                            <option value="3" data-translate="3-guest"></option>
+                            <option value="4" data-translate="4-guest"></option>
+                            <option value="5" data-translate="5-guest"></option>
+                            <option value="6" data-translate="6-guest"></option>
+                        </select>
+                    </div>
+                    <button id="checkAvailabilityButton" type="button"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300"
+                        data-translate="check-availability-title"></button>
+                </form>
+
+                <div class="mt-6 border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3" data-translate="book-with-us-title"></h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-translate="best-price-title"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-translate="no-fee-title"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-translate="expert-guides-title"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-translate="small-group-title"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="faq"></div>
+
+<div id="parallax"></div>

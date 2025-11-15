@@ -1,0 +1,5 @@
+export const COMPANY_EMAIL = "otw.yachting@gmail.com";
+export const COMPANY_PHONE_UKR_PRIMARY = "+380 (99) 640 25 02";
+export const COMPANY_PHONE_UKR_PRIMARY_HREF = "+380996402502";
+export const COMPANY_PHONE_UKR_SECONDARY = "+380 (50) 441 45 40";
+export const COMPANY_PHONE_UKR_SECONDARY_HREF = "+380504415540";
