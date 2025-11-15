@@ -1,6 +1,6 @@
 export const tourData_en = {
     "greece": {
-        "title": "Sunset Sailing Cruise",
+        "title": "Testing Change Capability",
         "subtitle": "Experience breathtaking sunsets on our luxury yacht",
         "hero-image": "/on-the-wave/resources/media/yacht/yacht_1.webp",
         "price": "$129",
@@ -15,7 +15,7 @@ export const tourData_en = {
             "Small group experience",
             "Photo opportunities with the sunset"
         ],
-        "description": `<p>Our Sunset Sailing Cruise offers a magical way to end your day on the water. As the sun dips below the horizon, you'll enjoy panoramic views from our comfortable yacht, complete with complimentary drinks and light snacks.</p>
+        "description": `<p>Our best tour offers a magical way to end your day on the water. As the sun dips below the horizon, you'll enjoy panoramic views from our comfortable yacht, complete with complimentary drinks and light snacks.</p>
 <p class="mt-4">This 3-hour excursion is perfect for couples, families, or small groups looking for a relaxing evening on the water. Our experienced crew will ensure your comfort while sharing interesting facts about the local marine environment and coastline.</p>
 <p class="mt-4">The tour departs from our marina and sails along the scenic coastline, providing ample opportunities for photography and wildlife spotting. Dolphins are frequently seen during these evening cruises.</p>`,
         "itinerary": [

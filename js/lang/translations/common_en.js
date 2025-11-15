@@ -30,7 +30,7 @@ export const english = {
             "faq.title": "Frequently Asked Questions"
         },
         "home": {
-            "title": "Sailing Holidays for Active People",
+            "title": "Sailing Holidays for Rich People",
             "subtitle": "Experience breathtaking adventures on the sea",
             "fact-one-title": "100+ Dates",
             "fact-one-subtitle": "Explore various destinations throughout the year",
